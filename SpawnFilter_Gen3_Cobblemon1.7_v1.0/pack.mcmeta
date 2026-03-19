@@ -1,0 +1,14 @@
+{
+    "pack": {
+        "pack_format": 48,
+        "description": "Includes ONLY generation 3 Pokemon, but can combine with other datapacks for other generations"
+    },
+    "filter": {
+        "block": [
+            {
+                "namespace": "cobblemon",
+                "path": "spawn_pool_world"
+            }
+        ]
+    }
+}
