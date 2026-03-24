@@ -36,13 +36,31 @@ For example, if you want a special playthrough of generations 1-4 (my favorite o
 - Cross-gen evolutions (example: Pichu > Pikachu, Magneton > Magnezone)
 
 # Setup
+Setup for these spawn filters will depend on whether you are playing with just the base mod or using a popular modpack, such as Cobbleverse. See the applicable directions below:
+
+## Cobblemon (base mod only)
 1. Add datapack/s to your Modrinth profile or modpack
 1. Copy/move the datapack/s to your world's datapack folder
     - NOTE: Datapacks in `./datapacks` (base folder) don't apply globally to all your worlds, this is why you must include it in the world-specific datapack folder (`./saves/<your_world_name>/datapacks`) for this to work. More info on the [Minecraft Wiki](https://minecraft.wiki/w/Data_pack#Usage).
 1. Join your world and enjoy the filtered spawns!
 
-# Disclaimer
-Currently, this is *ONLY* confirmed to work with the base Cobblemon mod. I plan to add support for modpacks that have their own spawning rules, such as Cobbleverse, in the future.
+## Cobbleverse (popular modpack)
+I found a way for my datapacks to be compatible with the Cobbleverse modpack, but my workaround is a little technical, so I plan to create a tutorial video soon: [TODO: Add YouTube tutorial link here...]. But for now, directions listed below:
+
+1. Add datapack/s to your Modrinth profile (appear in the `./datapacks` directory by default)
+1. Move/Cut & paste datapack/s to the `./datapacks/extra` sub-directory (not the world-specific datapack folder)
+    - *IMPORTANT*: Make sure to not leave any copies in the `./datapacks` directory, they must *ONLY* be in the `./datapacks/extra` sub-directory. It seems that the Cobbleverse modpack uses this directory to determine which datapacks are optional, which is important for the next steps.
+1. Create new world/open existing world
+1. Type the given command: `/datapack enable SpawnFilter_Gen#_Cobblemon1.7_v1.0.zip after COBBLEVERSE-DP-v28.zip` (replace `#` with the generation number, `1` through `9`)
+    - *NOTE*: Specifying the datapack loads `after` the Cobbleverse datapack is necessary for this work, otherwise the Cobbleverse datapack will override my spawn rules. That's why this command is needed and we can't just add the file to the folder.
+    - *NOTE*: The version numbers (i.e. `v1.0`, or `v28`) may be different than the ones provided in the command above, but if you start typing, then autocomplete should help you find the correct name you need.
+    - *NOTE*: Your player needs operator (OP) status to execute commands. If they are disabled in you're single player world, then just Pause the game > Open to LAN > Set "Allow Commands" = ON > Start LAN World > Now execute the command
+1. For multiple generations, repeat the previous step until each datapack is enabled.
+
+## Disclaimer
+Currently, the spawning rules are based off of the base Cobblemon mod. If a modapack, such as Cobblevers, has their own tweaked spawning rules, then enabling my datapacks will revert to the base Cobblemon spawning rules.
+
+Also, because the spawn rules are based off of the base Cobblemon mod, any spawning conditions for unimplemented Pokémon that modpacks add, will be missing until they are in the base mod. For example, this notably affects mythical and legendary Pokémon that spawn naturally from the Cobbleverse modpack.
 
 # Contact
 Issues or questions?
