@@ -1,0 +1,782 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "alomomola-herd-1__sf.in5.out2.out3.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in2.in5.out3.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in3.in5.out2.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in4.in5.out2.out3.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in2.in3.in5.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in2.in4.in5.out3.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in3.in4.in5.out2.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-1__sf.in2.in3.in4.in5.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in5.out2.out3.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in2.in5.out3.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in3.in5.out2.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in4.in5.out2.out3.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in2.in3.in5.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in2.in4.in5.out3.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in3.in4.in5.out2.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "alomomola-herd-2__sf.in2.in3.in4.in5.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "5-47",
+      "weight": 12.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_deep_ocean"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "remoraid",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "alomomola",
+          "weight": 80.0,
+          "levelRange": "25-44",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "luvdisc",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "finneon",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

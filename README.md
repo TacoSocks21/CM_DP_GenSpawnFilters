@@ -15,6 +15,8 @@ Want to include multiple generations? Just add any number of my spawn-filtering 
 
 For example, if you want a special playthrough of generations 1-4 (my favorite ones, by the way), just add all four datapacks to your world and you're all set.
 
+Herds that mix generations combine automatically, too. With only Gen 2 installed, an Alpha Crobat shows up on its own, but install Gen 1 as well and it leads its usual herd of Zubat and Golbat.
+
 - [Gen 1: Kanto](https://modrinth.com/datapack/cobblemon-spawn-filter-gen-1-kanto)
 - [Gen 2: Johto](https://modrinth.com/datapack/cobblemon-spawn-filter-gen-2-johto)
 - [Gen 3: Hoenn](https://modrinth.com/datapack/cobblemon-spawn-filter-gen-3-hoenn)
@@ -30,10 +32,11 @@ For example, if you want a special playthrough of generations 1-4 (my favorite o
 - All natural spawns (...when they just _pop_ into existence)
 - Fishing spawns (via Cobblemon fishing mechanics)
 - Alpha Pokémon and herd spawns (Cobblemon 1.8+)
+- Habitat structures (Cobblemon 1.8+)
+    - NOTE: Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby.
 
 ## What this datapack **DOES NOT** affect:
 - Cobblemon structures (example: Gimmighouls spawning from the chests in Gimmighoul towers)
-- Habitat structures (Cobblemon 1.8+), which use their own spawn lists
 - Structure loot tables (example: fossil loot tables from sus sand/gravel in fossil archaeology structures)
 - Cross-gen evolutions (example: Pichu > Pikachu, Magneton > Magnezone)
 

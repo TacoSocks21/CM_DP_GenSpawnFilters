@@ -1,0 +1,252 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "jynx-herd-1__sf.in1.out2.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "6-46",
+      "weight": 6.6,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "jynx",
+          "weight": 70.0,
+          "levelRange": "33-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "jynx-herd-1__sf.in2.out1.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "6-46",
+      "weight": 6.6,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "smoochum",
+          "weight": 30.0,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "jynx-herd-1__sf.in1.in2.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "6-46",
+      "weight": 6.6,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "jynx",
+          "weight": 70.0,
+          "levelRange": "33-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "smoochum",
+          "weight": 30.0,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "jynx-herd-2__sf.in1.out2.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "6-46",
+      "weight": 6.6,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "jynx",
+          "weight": 70.0,
+          "levelRange": "33-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "jynx-herd-2__sf.in2.out1.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "6-46",
+      "weight": 6.6,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "smoochum",
+          "weight": 30.0,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "jynx-herd-2__sf.in1.in2.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "6-46",
+      "weight": 6.6,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "jynx",
+          "weight": 70.0,
+          "levelRange": "33-43",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "smoochum",
+          "weight": 30.0,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

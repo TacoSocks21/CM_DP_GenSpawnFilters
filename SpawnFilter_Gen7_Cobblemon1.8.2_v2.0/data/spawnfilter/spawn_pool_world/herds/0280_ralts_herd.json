@@ -1,0 +1,440 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ralts-herd-1__sf.in3.out4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical",
+          "aether:skyroot_grove",
+          "aether:skyroot_meadow",
+          "#cobblemon:is_snowy_forest"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-1__sf.in3.in4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical",
+          "aether:skyroot_grove",
+          "aether:skyroot_meadow",
+          "#cobblemon:is_snowy_forest"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gallade",
+          "weight": 0.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-2__sf.in3.out4.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-2__sf.in3.in4.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gallade",
+          "weight": 0.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-3__sf.in3.out4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-3__sf.in3.in4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gallade",
+          "weight": 0.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-4__sf.in3.out4.",
+      "presets": [
+        "mansion"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 20.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "ralts-herd-4__sf.in3.in4.",
+      "presets": [
+        "mansion"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-52",
+      "weight": 20.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "ralts",
+          "weight": 80.0,
+          "levelRange": "4-17",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kirlia",
+          "weight": 18.0,
+          "levelRange": "22-25",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gardevoir",
+          "weight": 1.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gallade",
+          "weight": 0.5,
+          "levelRange": "31-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

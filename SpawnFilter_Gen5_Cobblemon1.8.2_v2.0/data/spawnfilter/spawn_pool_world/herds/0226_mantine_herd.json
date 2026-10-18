@@ -1,0 +1,152 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "mantine-herd-1__sf.in2.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "10-49",
+      "weight": 60.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_lukewarm_ocean",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "minY": 48
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mantine",
+          "weight": 70.0,
+          "levelRange": "33-46",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "mantine-herd-1__sf.in2.in4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "10-49",
+      "weight": 60.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_lukewarm_ocean",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "minY": 48
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mantine",
+          "weight": 70.0,
+          "levelRange": "33-46",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "mantyke",
+          "weight": 30.0,
+          "levelRange": "14-33",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "mantine-herd-2__sf.in2.out4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "10-49",
+      "weight": 60.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_lukewarm_ocean",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "minY": 48
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mantine",
+          "weight": 70.0,
+          "levelRange": "33-46",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "mantine-herd-2__sf.in2.in4.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 7,
+      "levelRange": "10-49",
+      "weight": 60.0,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_lukewarm_ocean",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "minY": 48
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "mantine",
+          "weight": 70.0,
+          "levelRange": "33-46",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "mantyke",
+          "weight": 30.0,
+          "levelRange": "14-33",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

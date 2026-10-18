@@ -1,0 +1,87 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "wobbuffet-herd-1__sf.in2.out3.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-41",
+      "weight": 20.2,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_deep_dark",
+          "minecraft:sulfur_caves"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "wobbuffet",
+          "weight": 70.0,
+          "levelRange": "18-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "wobbuffet-herd-1__sf.in2.in3.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-41",
+      "weight": 20.2,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_deep_dark",
+          "minecraft:sulfur_caves"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "wobbuffet",
+          "weight": 70.0,
+          "levelRange": "18-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "wynaut",
+          "weight": 30.0,
+          "levelRange": "5-24",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

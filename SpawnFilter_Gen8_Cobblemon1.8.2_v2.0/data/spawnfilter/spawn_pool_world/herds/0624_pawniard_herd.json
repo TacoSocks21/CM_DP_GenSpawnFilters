@@ -1,0 +1,194 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "pawniard-herd-3__sf.in5.out9.",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "9-55",
+      "weight": 0.5,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_bamboo"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pawniard",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "bisharp",
+          "weight": 70.0,
+          "levelRange": "54-54",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "pawniard-herd-3__sf.in5.in9.",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "9-55",
+      "weight": 0.5,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_bamboo"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pawniard",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "bisharp",
+          "weight": 70.0,
+          "levelRange": "54-54",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kingambit",
+          "weight": 1.0,
+          "levelRange": "53-53",
+          "levelRangeOffset": "-1-2",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "pawniard-herd-4__sf.in5.out9.",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "9-55",
+      "weight": 0.8,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pawniard",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "bisharp",
+          "weight": 70.0,
+          "levelRange": "54-54",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "pawniard-herd-4__sf.in5.in9.",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "9-55",
+      "weight": 0.8,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pawniard",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "bisharp",
+          "weight": 70.0,
+          "levelRange": "54-54",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "kingambit",
+          "weight": 1.0,
+          "levelRange": "53-53",
+          "levelRangeOffset": "-1-2",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

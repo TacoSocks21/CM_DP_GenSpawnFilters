@@ -1,0 +1,137 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "dudunsparce-alpha-1__sf.in9.out2.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "30-100",
+      "weight": 80.0,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_deep_dark",
+          "minecraft:sulfur_caves"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "dudunsparce landsnake_form=two-segment held_item=cobblemon:normal_gem alpha=true",
+          "weight": 29.7,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "dudunsparce landsnake_form=three-segment held_item=cobblemon:normal_gem alpha=true",
+          "weight": 0.3,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "dudunsparce landsnake_form=two-segment",
+          "weight": 118.8,
+          "levelRange": "34-48",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "dudunsparce landsnake_form=three-segment",
+          "weight": 1.2,
+          "levelRange": "34-48",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "dudunsparce-alpha-1__sf.in2.in9.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "30-100",
+      "weight": 80.0,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_deep_dark",
+          "minecraft:sulfur_caves"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "dudunsparce landsnake_form=two-segment held_item=cobblemon:normal_gem alpha=true",
+          "weight": 29.7,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "dudunsparce landsnake_form=three-segment held_item=cobblemon:normal_gem alpha=true",
+          "weight": 0.3,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "dunsparce",
+          "weight": 80.0,
+          "levelRange": "20-39",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "dudunsparce landsnake_form=two-segment",
+          "weight": 118.8,
+          "levelRange": "34-48",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "dudunsparce landsnake_form=three-segment",
+          "weight": 1.2,
+          "levelRange": "34-48",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

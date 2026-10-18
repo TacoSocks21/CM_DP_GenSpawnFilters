@@ -1,0 +1,200 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "magnemite-herd-1__sf.in1.out4.",
+      "presets": [
+        "redstone"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "8-54",
+      "weight": 500.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_deep_dark",
+          "minecraft:sulfur_caves"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magnemite",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magneton",
+          "weight": 19.0,
+          "levelRange": "32-43",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "magnemite-herd-1__sf.in1.in4.",
+      "presets": [
+        "redstone"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "8-54",
+      "weight": 500.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_deep_dark",
+          "minecraft:sulfur_caves"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magnemite",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magneton",
+          "weight": 19.0,
+          "levelRange": "32-43",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magnezone",
+          "weight": 1.0,
+          "levelRange": "43-49",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "magnemite-herd-2__sf.in1.out4.",
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "8-54",
+      "weight": 10.0,
+      "weightMultiplier": {
+        "multiplier": 5.0,
+        "condition": {
+          "isThundering": true
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:lightning_rod"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magnemite",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magneton",
+          "weight": 19.0,
+          "levelRange": "32-43",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "magnemite-herd-2__sf.in1.in4.",
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "8-54",
+      "weight": 10.0,
+      "weightMultiplier": {
+        "multiplier": 5.0,
+        "condition": {
+          "isThundering": true
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:lightning_rod"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magnemite",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magneton",
+          "weight": 19.0,
+          "levelRange": "32-43",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magnezone",
+          "weight": 1.0,
+          "levelRange": "43-49",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

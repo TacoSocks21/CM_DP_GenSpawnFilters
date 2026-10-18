@@ -1,0 +1,538 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "chansey-herd-1__sf.in1.out2.out4.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-1__sf.in1.in2.out4.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "blissey",
+          "weight": 10.0,
+          "levelRange": "42-50",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-1__sf.in1.in4.out2.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "happiny",
+          "weight": 30.0,
+          "levelRange": "5-20",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-1__sf.in1.in2.in4.",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "blissey",
+          "weight": 10.0,
+          "levelRange": "42-50",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "happiny",
+          "weight": 30.0,
+          "levelRange": "5-20",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-2__sf.in1.out2.out4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-2__sf.in1.in2.out4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "blissey",
+          "weight": 10.0,
+          "levelRange": "42-50",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-2__sf.in1.in4.out2.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "happiny",
+          "weight": 30.0,
+          "levelRange": "5-20",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-2__sf.in1.in2.in4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "blissey",
+          "weight": 10.0,
+          "levelRange": "42-50",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "happiny",
+          "weight": 30.0,
+          "levelRange": "5-20",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-3__sf.in1.out2.out4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-3__sf.in1.in2.out4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "blissey",
+          "weight": 10.0,
+          "levelRange": "42-50",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-3__sf.in1.in4.out2.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "happiny",
+          "weight": 30.0,
+          "levelRange": "5-20",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "chansey-herd-3__sf.in1.in2.in4.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "1-54",
+      "weight": 34.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "chansey",
+          "weight": 60.0,
+          "levelRange": "20-42",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "blissey",
+          "weight": 10.0,
+          "levelRange": "42-50",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "happiny",
+          "weight": 30.0,
+          "levelRange": "5-20",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

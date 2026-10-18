@@ -1,0 +1,190 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "marill-herd-1__sf.in2.out3.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "1-42",
+      "weight": 69.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "marill",
+          "weight": 60.0,
+          "levelRange": "17-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "azumarill",
+          "weight": 10.0,
+          "levelRange": "20-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "marill-herd-1__sf.in2.in3.",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "1-42",
+      "weight": 69.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_river"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_freezing"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "marill",
+          "weight": 60.0,
+          "levelRange": "17-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "azumarill",
+          "weight": 10.0,
+          "levelRange": "20-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "azurill",
+          "weight": 30.0,
+          "levelRange": "5-17",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "marill-herd-2__sf.in2.out3.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "surface",
+      "maxHerdSize": 5,
+      "levelRange": "1-42",
+      "weight": 37.8,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_river"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "marill",
+          "weight": 60.0,
+          "levelRange": "17-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "azumarill",
+          "weight": 10.0,
+          "levelRange": "20-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "marill-herd-2__sf.in2.in3.",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "surface",
+      "maxHerdSize": 5,
+      "levelRange": "1-42",
+      "weight": 37.8,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_river"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "marill",
+          "weight": 60.0,
+          "levelRange": "17-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "azumarill",
+          "weight": 10.0,
+          "levelRange": "20-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "azurill",
+          "weight": 30.0,
+          "levelRange": "5-17",
+          "levelRangeOffset": "-4-2",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}
