@@ -1,0 +1,74 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "pincurchin-herd-1",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "seafloor",
+      "maxHerdSize": 7,
+      "levelRange": "19-44",
+      "weight": 50.0,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_ocean"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:kelp_plant",
+          "minecraft:seagrass"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pincurchin",
+          "weight": 80.0,
+          "levelRange": "22-41",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "pincurchin-herd-2",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "seafloor",
+      "maxHerdSize": 7,
+      "levelRange": "19-44",
+      "weight": 50.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "structures": [
+          "cobblemon:shipwreck_coves/submerged_shipwreck_cove"
+        ],
+        "minY": -60,
+        "maxY": 13
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pincurchin",
+          "weight": 80.0,
+          "levelRange": "22-41",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

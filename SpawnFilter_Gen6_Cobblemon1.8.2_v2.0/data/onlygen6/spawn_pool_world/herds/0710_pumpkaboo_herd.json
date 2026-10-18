@@ -1,0 +1,85 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "pumpkaboo-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "9-49",
+      "weight": 30.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "timeRange": "night",
+        "neededNearbyBlocks": [
+          "minecraft:pumpkin",
+          "minecraft:carved_pumpkin"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pumpkaboo",
+          "weight": 90.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gourgeist",
+          "weight": 10.0,
+          "levelRange": "31-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "pumpkaboo-herd-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "9-49",
+      "weight": 50.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_overgrowth"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "pumpkaboo",
+          "weight": 90.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "gourgeist",
+          "weight": 10.0,
+          "levelRange": "31-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

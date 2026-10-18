@@ -1,0 +1,117 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "glimmet-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "10-53",
+      "weight": 50.0,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:gemstones"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "glimmet",
+          "weight": 80.0,
+          "levelRange": "13-32",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "glimmora",
+          "weight": 20.0,
+          "levelRange": "37-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "glimmet-herd-2",
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "10-53",
+      "weight": 10.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_quartz"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "glimmet",
+          "weight": 80.0,
+          "levelRange": "13-32",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "glimmora",
+          "weight": 20.0,
+          "levelRange": "37-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "glimmet-herd-3",
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "10-53",
+      "weight": 30.0,
+      "condition": {
+        "biomes": [
+          "the_bumblezone:crystal_canyon",
+          "biomesoplenty:crystalline_chasm"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "glimmet",
+          "weight": 80.0,
+          "levelRange": "13-32",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "glimmora",
+          "weight": 20.0,
+          "levelRange": "37-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

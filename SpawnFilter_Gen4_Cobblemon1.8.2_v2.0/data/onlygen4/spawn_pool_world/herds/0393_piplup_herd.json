@@ -1,0 +1,123 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "piplup-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "ultra-rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "5-53",
+      "weight": 38.4,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "piplup",
+          "weight": 95.0,
+          "levelRange": "8-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "empoleon",
+          "weight": 2.0,
+          "levelRange": "37-48",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "piplup-herd-2",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "ultra-rare",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 5,
+      "levelRange": "5-53",
+      "weight": 38.4,
+      "condition": {
+        "canSeeSky": true,
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "piplup",
+          "weight": 95.0,
+          "levelRange": "8-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "empoleon",
+          "weight": 2.0,
+          "levelRange": "37-48",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "piplup-herd-3",
+      "presets": [
+        "water"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "ultra-rare",
+      "spawnablePositionType": "submerged",
+      "maxHerdSize": 5,
+      "levelRange": "5-53",
+      "weight": 38.4,
+      "condition": {
+        "canSeeSky": false,
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "piplup",
+          "weight": 95.0,
+          "levelRange": "8-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "empoleon",
+          "weight": 2.0,
+          "levelRange": "37-48",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

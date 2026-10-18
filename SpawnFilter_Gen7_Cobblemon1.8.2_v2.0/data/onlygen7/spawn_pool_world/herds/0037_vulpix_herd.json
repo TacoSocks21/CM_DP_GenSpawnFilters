@@ -1,0 +1,89 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "vulpix-alola-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "5-51",
+      "weight": 30.0,
+      "weightMultiplier": {
+        "multiplier": 2.5,
+        "condition": {
+          "timeRange": "twilight"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_snowy_forest",
+          "#cobblemon:is_snowy_taiga"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vulpix alolan",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "ninetales alolan",
+          "weight": 10.0,
+          "levelRange": "27-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vulpix-alola-herd-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "5-51",
+      "weight": 10.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_frozen"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vulpix alolan",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "ninetales alolan",
+          "weight": 10.0,
+          "levelRange": "27-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

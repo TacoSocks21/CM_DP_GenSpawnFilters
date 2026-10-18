@@ -1,0 +1,164 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "slugma-herd-1",
+      "presets": [
+        "lava"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "surface",
+      "maxHerdSize": 3,
+      "levelRange": "1-43",
+      "weight": 4.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "slugma",
+          "weight": 80.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magcargo",
+          "weight": 20.0,
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "slugma-herd-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "1-43",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_volcanic"
+        ],
+        "neededNearbyBlocks": [
+          "minecraft:lava"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "slugma",
+          "weight": 80.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magcargo",
+          "weight": 20.0,
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "slugma-herd-3",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "1-43",
+      "weight": 12.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_basalt",
+          "#cobblemon:nether/is_wasteland"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "slugma",
+          "weight": 80.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magcargo",
+          "weight": 20.0,
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "slugma-herd-4",
+      "presets": [
+        "lava"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "surface",
+      "maxHerdSize": 3,
+      "levelRange": "1-43",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_nether",
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "slugma",
+          "weight": 80.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "magcargo",
+          "weight": 20.0,
+          "levelRange": "40-40",
+          "levelRangeOffset": "-2-3",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

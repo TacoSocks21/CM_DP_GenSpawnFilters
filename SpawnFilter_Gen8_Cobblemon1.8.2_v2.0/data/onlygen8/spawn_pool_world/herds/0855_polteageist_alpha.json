@@ -1,0 +1,265 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "polteageist-alpha-1",
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "24-100",
+      "weight": 80.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_plains",
+          "#cobblemon:is_snowy",
+          "#cobblemon:is_spooky",
+          "#cobblemon:is_taiga",
+          "#cobblemon:is_tundra"
+        ],
+        "timeRange": "day",
+        "structures": [
+          "#minecraft:village"
+        ],
+        "minY": 62
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_bamboo",
+          "#cobblemon:is_cherry_blossom",
+          "#cobblemon:is_island",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_ocean",
+          "#cobblemon:is_swamp",
+          "#cobblemon:is_thermal",
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "polteageist tea_authenticity=phony alpha=true",
+          "weight": 29.7,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=antique alpha=true",
+          "weight": 0.3,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "sinistea tea_authenticity=phony",
+          "weight": 79.2,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "sinistea tea_authenticity=antique",
+          "weight": 0.8,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=phony",
+          "weight": 118.8,
+          "levelRange": "28-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=antique",
+          "weight": 1.2,
+          "levelRange": "28-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "polteageist-alpha-2",
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "24-100",
+      "weight": 80.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_plains",
+          "#cobblemon:is_snowy",
+          "#cobblemon:is_spooky",
+          "#cobblemon:is_taiga",
+          "#cobblemon:is_tundra"
+        ],
+        "timeRange": "night",
+        "structures": [
+          "#minecraft:village"
+        ],
+        "minY": 62
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_arid",
+          "#cobblemon:is_bamboo",
+          "#cobblemon:is_cherry_blossom",
+          "#cobblemon:is_island",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_ocean",
+          "#cobblemon:is_swamp",
+          "#cobblemon:is_thermal",
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "polteageist tea_authenticity=phony alpha=true",
+          "weight": 29.7,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=antique alpha=true",
+          "weight": 0.3,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "sinistea tea_authenticity=phony",
+          "weight": 79.2,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "sinistea tea_authenticity=antique",
+          "weight": 0.8,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=phony",
+          "weight": 118.8,
+          "levelRange": "28-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=antique",
+          "weight": 1.2,
+          "levelRange": "28-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "polteageist-alpha-3",
+      "presets": [
+        "mansion_dining"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "24-100",
+      "weight": 100.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "polteageist tea_authenticity=phony alpha=true",
+          "weight": 29.7,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=antique alpha=true",
+          "weight": 0.3,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "sinistea tea_authenticity=phony",
+          "weight": 79.2,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "sinistea tea_authenticity=antique",
+          "weight": 0.8,
+          "levelRange": "9-28",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=phony",
+          "weight": 118.8,
+          "levelRange": "28-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "polteageist tea_authenticity=antique",
+          "weight": 1.2,
+          "levelRange": "28-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

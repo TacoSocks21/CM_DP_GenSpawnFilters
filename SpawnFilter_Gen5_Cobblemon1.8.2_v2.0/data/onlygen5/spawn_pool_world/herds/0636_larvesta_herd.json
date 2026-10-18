@@ -1,0 +1,149 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "larvesta-herd-1",
+      "presets": [
+        "natural",
+        "desert_pyramid"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "11-64",
+      "weight": 420.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_desert"
+        ],
+        "minY": 48
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "larvesta",
+          "weight": 80.0,
+          "levelRange": "14-33",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "larvesta-herd-2",
+      "presets": [
+        "natural",
+        "jungle_pyramid"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "11-64",
+      "weight": 420.0,
+      "condition": {
+        "canSeeSky": false,
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ],
+        "minY": 48
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "larvesta",
+          "weight": 80.0,
+          "levelRange": "14-33",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "larvesta-herd-3",
+      "presets": [
+        "natural",
+        "treetop"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "11-64",
+      "weight": 42.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_crimson",
+          "#cobblemon:nether/is_forest"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "larvesta",
+          "weight": 80.0,
+          "levelRange": "14-33",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 4,
+            "entries": [
+              {
+                "item": "minecraft:string",
+                "quantityRange": "0-1"
+              },
+              {
+                "item": "minecraft:blaze_powder",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:silver_powder",
+                "percentage": 2.5
+              },
+              {
+                "item": "cobblemon:charti_berry",
+                "percentage": 2.5
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "larvesta-herd-4",
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "11-64",
+      "weight": 45.0,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "structures": [
+          "#aether:dungeons"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "larvesta",
+          "weight": 80.0,
+          "levelRange": "14-33",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

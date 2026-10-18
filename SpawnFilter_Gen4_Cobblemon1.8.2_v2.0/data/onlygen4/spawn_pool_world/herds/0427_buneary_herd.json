@@ -1,0 +1,50 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "buneary-herd-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "10-48",
+      "weight": 30.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_hills",
+          "#cobblemon:is_snowy_forest",
+          "#cobblemon:is_snowy_taiga",
+          "#cobblemon:is_taiga"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "buneary",
+          "weight": 80.0,
+          "levelRange": "13-32",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "lopunny",
+          "weight": 20.0,
+          "levelRange": "32-44",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 2,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

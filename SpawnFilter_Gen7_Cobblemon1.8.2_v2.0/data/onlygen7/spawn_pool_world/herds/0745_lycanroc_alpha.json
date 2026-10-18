@@ -1,0 +1,192 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "lycanroc-dusk-alpha-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 8,
+      "levelRange": "23-100",
+      "weight": 100.0,
+      "weightMultiplier": {
+        "multiplier": 5.0,
+        "condition": {
+          "moonPhase": 0
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_taiga"
+        ],
+        "timeRange": "dusk"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "lycanroc wolf_form=dusk held_item=cobblemon:rock_gem alpha=true",
+          "weight": 10.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "rockruff",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "rockruff wolf_form=dusk",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "lycanroc",
+          "weight": 120.0,
+          "levelRange": "27-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "lycanroc wolf_form=midnight",
+          "weight": 120.0,
+          "levelRange": "27-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "lycanroc-midday-alpha-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "23-100",
+      "weight": 80.0,
+      "weightMultiplier": {
+        "multiplier": 5.0,
+        "condition": {
+          "moonPhase": 0
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_taiga"
+        ],
+        "timeRange": "day"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "lycanroc held_item=cobblemon:rock_gem alpha=true",
+          "weight": 20.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "rockruff",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "lycanroc",
+          "weight": 120.0,
+          "levelRange": "27-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "lycanroc-midnight-alpha-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "23-100",
+      "weight": 80.0,
+      "weightMultiplier": {
+        "multiplier": 5.0,
+        "condition": {
+          "moonPhase": 0
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_taiga"
+        ],
+        "timeRange": "night"
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "lycanroc wolf_form=midnight held_item=cobblemon:rock_gem alpha=true",
+          "weight": 20.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "rockruff",
+          "weight": 80.0,
+          "levelRange": "6-25",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "lycanroc wolf_form=midnight",
+          "weight": 120.0,
+          "levelRange": "27-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

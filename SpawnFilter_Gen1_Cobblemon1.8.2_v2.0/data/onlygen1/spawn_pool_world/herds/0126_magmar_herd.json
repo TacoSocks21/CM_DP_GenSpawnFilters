@@ -1,0 +1,123 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "magmar-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "12-54",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_hills"
+        ],
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "minecraft:lava",
+          "minecraft:magma_block"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magmar",
+          "weight": 50.0,
+          "levelRange": "33-47",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "magmar-herd-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "12-54",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_volcanic"
+        ],
+        "isRaining": false
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magmar",
+          "weight": 50.0,
+          "levelRange": "33-47",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "magmar-herd-3",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "12-54",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_basalt",
+          "#cobblemon:nether/is_wasteland"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "magmar",
+          "weight": 50.0,
+          "levelRange": "33-47",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 3,
+            "entries": [
+              {
+                "item": "minecraft:blaze_powder",
+                "percentage": 10.0
+              },
+              {
+                "item": "cobblemon:magmarizer",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:rawst_berry",
+                "percentage": 5.0
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

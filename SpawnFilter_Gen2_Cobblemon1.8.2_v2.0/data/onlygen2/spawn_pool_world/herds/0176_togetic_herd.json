@@ -1,0 +1,134 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "togetic-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "1-55",
+      "weight": 67.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_sky"
+        ],
+        "timeRange": "day",
+        "isRaining": false
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_plains",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "togepi",
+          "weight": 30.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "togetic",
+          "weight": 60.0,
+          "levelRange": "22-37",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "togetic-herd-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "1-55",
+      "weight": 67.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "aether:skyroot_grove",
+          "aether:skyroot_meadow"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "togepi",
+          "weight": 30.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "togetic",
+          "weight": 60.0,
+          "levelRange": "22-37",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "togetic-herd-3",
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "1-55",
+      "weight": 67.0,
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "togepi",
+          "weight": 30.0,
+          "levelRange": "4-22",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "togetic",
+          "weight": 60.0,
+          "levelRange": "22-37",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1105 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "vivillon-archipelago-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mushroom"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_magical",
+          "#cobblemon:is_spooky",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=archipelago held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=archipelago",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-continental-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_plains"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_savanna",
+          "minecraft:sunflower_plains"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=continental held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=continental",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-elegant-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_magical",
+          "#cobblemon:is_spooky"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=elegant held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=elegant",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-fancy-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_cherry_blossom"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=fancy held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=fancy",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-fancy-alpha-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=fancy held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=fancy",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-garden-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_forest"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_cherry_blossom",
+          "#cobblemon:is_floral",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_plains",
+          "#cobblemon:is_spooky",
+          "#cobblemon:is_swamp"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=garden held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=garden",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-highplains-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_badlands"
+        ],
+        "timeRange": "day",
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=high-plains held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=high-plains",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-icysnow-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_taiga"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=icy-snow held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=icy-snow",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-jungle-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=jungle held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=jungle",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-marine-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_ocean"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_frozen_ocean",
+          "#cobblemon:is_warm_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=marine held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=marine",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-meadow-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_floral"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_cherry_blossom",
+          "#cobblemon:is_magical",
+          "minecraft:sunflower_plains"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=meadow held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=meadow",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-meadow-alpha-2",
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "biomes": [
+          "the_bumblezone:floral_meadow"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=meadow held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=meadow",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-modern-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=modern held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=modern",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-modern-alpha-2",
+      "presets": [
+        "natural",
+        "urban"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "timeRange": "day",
+        "isRaining": false
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=modern held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=modern",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-monsoon-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_desert",
+          "#cobblemon:is_floral",
+          "#cobblemon:is_mushroom",
+          "#cobblemon:is_tropical_island",
+          "#cobblemon:is_volcanic"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=monsoon held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=monsoon",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-ocean-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_coast",
+          "#cobblemon:is_warm_ocean"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_cold_ocean",
+          "#cobblemon:is_frozen_ocean",
+          "#cobblemon:is_lukewarm_ocean",
+          "#cobblemon:is_temperate_ocean"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=ocean held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=ocean",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-polar-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_frozen_ocean"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=polar held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=polar",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-river-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_freshwater"
+        ],
+        "timeRange": "day",
+        "isRaining": false
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_forest",
+          "#cobblemon:is_jungle",
+          "#cobblemon:is_magical",
+          "#cobblemon:is_spooky"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=river held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=river",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-sandstorm-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_desert"
+        ],
+        "timeRange": "day",
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_badlands"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=sandstorm held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=sandstorm",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-savanna-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ],
+        "timeRange": "day",
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_badlands",
+          "#cobblemon:is_desert",
+          "#cobblemon:is_floral",
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=savanna held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=savanna",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-sun-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "minecraft:sunflower_plains",
+          "#cobblemon:is_sky",
+          "#cobblemon:is_tropical_island"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=sun held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=sun",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "vivillon-tundra-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "10-100",
+      "weight": 100.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_glacial",
+          "#cobblemon:is_snowy_forest",
+          "#cobblemon:is_tundra"
+        ],
+        "timeRange": "day",
+        "isRaining": false,
+        "neededNearbyBlocks": [
+          "#cobblemon:flowers"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#minecraft:village"
+        ],
+        "biomes": [
+          "#cobblemon:is_mountain"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vivillon vivillon_wings=tundra held_item=cobblemon:bug_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "vivillon vivillon_wings=tundra",
+          "weight": 80.0,
+          "levelRange": "15-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

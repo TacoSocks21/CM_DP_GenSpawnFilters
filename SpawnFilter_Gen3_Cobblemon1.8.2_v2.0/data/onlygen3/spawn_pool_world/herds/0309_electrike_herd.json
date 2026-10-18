@@ -1,0 +1,52 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "electrike-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "5-48",
+      "weight": 60.0,
+      "weightMultiplier": {
+        "multiplier": 5.0,
+        "condition": {
+          "isThundering": true
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_grassland",
+          "#cobblemon:is_hills"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "electrike",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "manectric",
+          "weight": 20.0,
+          "levelRange": "28-44",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": true,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

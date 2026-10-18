@@ -1,0 +1,101 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "snover-herd-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "8-49",
+      "weight": 30.0,
+      "weightMultiplier": {
+        "multiplier": 1.5,
+        "condition": {
+          "isRaining": true
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_snowy_taiga",
+          "#cobblemon:is_snowy_forest"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "snover",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "abomasnow",
+          "weight": 20.0,
+          "levelRange": "42-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    },
+    {
+      "id": "snover-herd-2",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 4,
+      "levelRange": "8-49",
+      "weight": 30.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_mountain",
+          "#cobblemon:is_taiga",
+          "#cobblemon:is_tundra"
+        ]
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_snowy_taiga",
+          "#cobblemon:is_snowy_forest"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "snover",
+          "weight": 80.0,
+          "levelRange": "11-30",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "abomasnow",
+          "weight": 20.0,
+          "levelRange": "42-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    }
+  ]
+}

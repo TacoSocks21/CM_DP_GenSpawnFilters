@@ -1,0 +1,91 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "lycanroc-midday-1",
+            "pokemon": "lycanroc wolf_form=midday",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "uncommon",
+            "level": "25-49",
+            "weight": 4.8,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "moonPhase": 0
+                }
+            },
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "day"
+            }
+        },
+        {
+            "id": "lycanroc-midnight-2",
+            "pokemon": "lycanroc wolf_form=midnight",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "uncommon",
+            "level": "25-49",
+            "weight": 4.8,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "moonPhase": 0
+                }
+            },
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "night"
+            }
+        },
+        {
+            "id": "lycanroc-dusk-3",
+            "pokemon": "lycanroc wolf_form=dusk",
+            "presets": [
+                "natural",
+                "wild"
+            ],
+            "type": "pokemon",
+            "spawnablePositionType": "grounded",
+            "bucket": "common",
+            "level": "25-49",
+            "weight": 1.0,
+            "weightMultiplier": {
+                "multiplier": 5.0,
+                "condition": {
+                    "moonPhase": 0
+                }
+            },
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": [
+                    "#cobblemon:is_mountain",
+                    "#cobblemon:is_taiga"
+                ],
+                "timeRange": "dusk"
+            }
+        }
+    ]
+}

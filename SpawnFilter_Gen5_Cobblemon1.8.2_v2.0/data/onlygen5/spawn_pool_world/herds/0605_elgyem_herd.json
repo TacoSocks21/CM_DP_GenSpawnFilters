@@ -1,0 +1,167 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "elgyem-herd-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "9-49",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_end"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "elgyem",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 4,
+            "entries": [
+              {
+                "item": "minecraft:ender_pearl",
+                "quantityRange": "0-1"
+              },
+              {
+                "item": "minecraft:chorus_fruit",
+                "quantityRange": "0-1"
+              },
+              {
+                "item": "cobblemon:light_clay",
+                "percentage": 2.5
+              },
+              {
+                "item": "cobblemon:colbur_berry",
+                "percentage": 2.5
+              }
+            ]
+          }
+        },
+        {
+          "pokemon": "beheeyem",
+          "weight": 20.0,
+          "levelRange": "44-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 6,
+            "entries": [
+              {
+                "item": "minecraft:ender_pearl",
+                "quantityRange": "0-2"
+              },
+              {
+                "item": "minecraft:chorus_fruit",
+                "quantityRange": "0-2"
+              },
+              {
+                "item": "cobblemon:light_clay",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:colbur_berry",
+                "percentage": 5.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "elgyem-herd-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "9-49",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ],
+        "timeRange": "night",
+        "neededNearbyBlocks": [
+          "minecraft:wheat"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "elgyem",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "beheeyem",
+          "weight": 20.0,
+          "levelRange": "44-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "elgyem-herd-3",
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 3,
+      "levelRange": "9-49",
+      "weight": 12.0,
+      "condition": {
+        "biomes": [
+          "the_bumblezone:howling_constructs"
+        ]
+      },
+      "anticondition": {
+        "structures": [
+          "#the_bumblezone:sempiternal_sanctums"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "elgyem",
+          "weight": 80.0,
+          "levelRange": "12-31",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "beheeyem",
+          "weight": 20.0,
+          "levelRange": "44-45",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

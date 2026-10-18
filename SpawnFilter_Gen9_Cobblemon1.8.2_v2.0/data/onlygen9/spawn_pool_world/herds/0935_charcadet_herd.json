@@ -1,0 +1,206 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "charcadet-herd-1",
+      "presets": [
+        "natural",
+        "nether_structures"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "1-53",
+      "weight": 200.0,
+      "condition": {
+        "biomes": [
+          "#minecraft:is_nether"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "charcadet",
+          "weight": 90.0,
+          "levelRange": "4-23",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 3,
+            "entries": [
+              {
+                "item": "minecraft:blaze_rod",
+                "quantityRange": "0-1"
+              },
+              {
+                "item": "cobblemon:charcoal_stick",
+                "percentage": 2.5
+              },
+              {
+                "item": "cobblemon:rawst_berry",
+                "percentage": 2.5
+              }
+            ]
+          }
+        },
+        {
+          "pokemon": "armarouge",
+          "weight": 5.0,
+          "levelRange": "23-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 5,
+            "entries": [
+              {
+                "item": "minecraft:blaze_rod",
+                "quantityRange": "0-2"
+              },
+              {
+                "item": "cobblemon:charcoal_stick",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:auspicious_armor",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:rawst_berry",
+                "percentage": 5.0
+              }
+            ]
+          }
+        },
+        {
+          "pokemon": "ceruledge",
+          "weight": 5.0,
+          "levelRange": "23-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 5,
+            "entries": [
+              {
+                "item": "minecraft:blaze_rod",
+                "quantityRange": "0-2"
+              },
+              {
+                "item": "cobblemon:charcoal_stick",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:malicious_armor",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:rawst_berry",
+                "percentage": 5.0
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "charcadet-herd-2",
+      "presets": [
+        "ruined_portal"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "1-53",
+      "weight": 40.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_overworld"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "charcadet",
+          "weight": 90.0,
+          "levelRange": "4-23",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "armarouge",
+          "weight": 5.0,
+          "levelRange": "23-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "ceruledge",
+          "weight": 5.0,
+          "levelRange": "23-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "charcadet-herd-3",
+      "type": "pokemon-herd",
+      "bucket": "uncommon",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "1-53",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 0,
+        "maxSkyLight": 7,
+        "biomes": [
+          "#aether:is_aether"
+        ],
+        "structures": [
+          "#aether:dungeons"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "charcadet",
+          "weight": 90.0,
+          "levelRange": "4-23",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "armarouge",
+          "weight": 5.0,
+          "levelRange": "23-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "ceruledge",
+          "weight": 5.0,
+          "levelRange": "23-49",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    }
+  ]
+}

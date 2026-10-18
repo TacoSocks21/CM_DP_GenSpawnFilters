@@ -29,9 +29,11 @@ For example, if you want a special playthrough of generations 1-4 (my favorite o
 ## What this datapack **DOES** affect:
 - All natural spawns (...when they just _pop_ into existence)
 - Fishing spawns (via Cobblemon fishing mechanics)
+- Alpha Pokémon and herd spawns (Cobblemon 1.8+)
 
 ## What this datapack **DOES NOT** affect:
 - Cobblemon structures (example: Gimmighouls spawning from the chests in Gimmighoul towers)
+- Habitat structures (Cobblemon 1.8+), which use their own spawn lists
 - Structure loot tables (example: fossil loot tables from sus sand/gravel in fossil archaeology structures)
 - Cross-gen evolutions (example: Pichu > Pikachu, Magneton > Magnezone)
 
@@ -51,7 +53,7 @@ I found a way for my datapacks to be compatible with the Cobbleverse modpack, bu
 1. Move/Cut & paste datapack/s to the `./datapacks/extra` sub-directory (not the world-specific datapack folder)
     - *IMPORTANT*: Make sure to not leave any copies in the `./datapacks` directory, they must *ONLY* be in the `./datapacks/extra` sub-directory. It seems that the Cobbleverse modpack uses this directory to determine which datapacks are optional, which is important for the next steps.
 1. Create new world/open existing world
-1. Type the given command: `/datapack enable SpawnFilter_Gen#_Cobblemon1.7_v1.0.zip after COBBLEVERSE-DP-v28.zip` (replace `#` with the generation number, `1` through `9`)
+1. Type the given command: `/datapack enable SpawnFilter_Gen#_Cobblemon1.8.2_v2.0.zip after COBBLEVERSE-DP-v28.zip` (replace `#` with the generation number, `1` through `9`)
     - *NOTE*: Specifying the datapack loads `after` the Cobbleverse datapack is necessary for this work, otherwise the Cobbleverse datapack will override my spawn rules. That's why this command is needed and we can't just add the file to the folder.
     - *NOTE*: The version numbers (i.e. `v1.0`, or `v28`) may be different than the ones provided in the command above, but if you start typing, then autocomplete should help you find the correct name you need.
     - *NOTE*: Your player needs operator (OP) status to execute commands. If they are disabled in you're single player world, then just Pause the game > Open to LAN > Set "Allow Commands" = ON > Start LAN World > Now execute the command

@@ -1,0 +1,146 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "rapidash-alpha-1",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 8,
+      "levelRange": "38-100",
+      "weight": 80.0,
+      "weightMultiplier": {
+        "multiplier": 0.25,
+        "condition": {
+          "timeRange": "night"
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_grassland"
+        ],
+        "isRaining": false
+      },
+      "anticondition": {
+        "biomes": [
+          "#cobblemon:is_floral",
+          "#cobblemon:is_magical"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "rapidash held_item=cobblemon:fire_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "ponyta",
+          "weight": 80.0,
+          "levelRange": "19-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "rapidash",
+          "weight": 120.0,
+          "levelRange": "42-46",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true
+        }
+      ]
+    },
+    {
+      "id": "rapidash-alpha-2",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "boss",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 8,
+      "levelRange": "38-100",
+      "weight": 100.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_overgrowth",
+          "#cobblemon:nether/is_wasteland"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "rapidash held_item=cobblemon:fire_gem alpha=true",
+          "weight": 30.0,
+          "levelRange": "1-100",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "ponyta",
+          "weight": 80.0,
+          "levelRange": "19-38",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 3,
+            "entries": [
+              {
+                "item": "minecraft:leather",
+                "quantityRange": "0-1"
+              },
+              {
+                "item": "minecraft:blaze_powder",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:shuca_berry",
+                "percentage": 2.5
+              }
+            ]
+          }
+        },
+        {
+          "pokemon": "rapidash",
+          "weight": 120.0,
+          "levelRange": "42-46",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 5,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 4,
+            "entries": [
+              {
+                "item": "minecraft:leather",
+                "quantityRange": "0-2"
+              },
+              {
+                "item": "minecraft:blaze_powder",
+                "percentage": 10.0
+              },
+              {
+                "item": "cobblemon:shuca_berry",
+                "percentage": 5.0
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "jangmoo-herd-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "ultra-rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "5-60",
+      "weight": 50.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_jungle"
+        ],
+        "minY": 0
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "jangmoo",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "hakamoo",
+          "weight": 18.0,
+          "levelRange": "37-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "kommoo",
+          "weight": 2.0,
+          "levelRange": "46-55",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    },
+    {
+      "id": "jangmoo-herd-2",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 5,
+      "levelRange": "5-60",
+      "weight": 50.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_tropical_island"
+        ],
+        "minY": 0
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "jangmoo",
+          "weight": 80.0,
+          "levelRange": "8-27",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "hakamoo",
+          "weight": 18.0,
+          "levelRange": "37-38",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        },
+        {
+          "pokemon": "kommoo",
+          "weight": 2.0,
+          "levelRange": "46-55",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    }
+  ]
+}

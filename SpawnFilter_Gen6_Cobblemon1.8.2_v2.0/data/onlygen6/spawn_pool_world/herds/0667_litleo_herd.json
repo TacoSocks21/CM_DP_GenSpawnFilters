@@ -1,0 +1,120 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "litleo-herd-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "12-51",
+      "weight": 20.0,
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_savanna"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "litleo",
+          "weight": 80.0,
+          "levelRange": "15-34",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true
+        },
+        {
+          "pokemon": "pyroar female",
+          "weight": 18.0,
+          "levelRange": "37-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "pyroar male",
+          "weight": 2.0,
+          "levelRange": "37-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    },
+    {
+      "id": "litleo-herd-2",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "common",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 6,
+      "levelRange": "12-51",
+      "weight": 20.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:nether/is_overgrowth",
+          "#cobblemon:nether/is_wasteland"
+        ]
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "litleo",
+          "weight": 80.0,
+          "levelRange": "15-34",
+          "levelRangeOffset": "-3-3",
+          "maxTimes": 7,
+          "isLeader": false,
+          "isFollower": true,
+          "dropTable": {
+            "amount": 3,
+            "entries": [
+              {
+                "item": "minecraft:rotten_flesh",
+                "quantityRange": "0-1"
+              },
+              {
+                "item": "minecraft:blaze_powder",
+                "percentage": 5.0
+              },
+              {
+                "item": "cobblemon:rawst_berry",
+                "percentage": 2.5
+              }
+            ]
+          }
+        },
+        {
+          "pokemon": "pyroar female",
+          "weight": 18.0,
+          "levelRange": "37-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 3,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "pyroar male",
+          "weight": 2.0,
+          "levelRange": "37-47",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    }
+  ]
+}

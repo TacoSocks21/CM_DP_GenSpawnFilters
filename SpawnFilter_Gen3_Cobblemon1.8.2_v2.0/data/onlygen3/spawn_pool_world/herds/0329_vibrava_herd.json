@@ -1,0 +1,53 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "vibrava-herd-1",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "type": "pokemon-herd",
+      "bucket": "rare",
+      "spawnablePositionType": "grounded",
+      "maxHerdSize": 7,
+      "levelRange": "35-52",
+      "weight": 12.5,
+      "weightMultiplier": {
+        "multiplier": 1.5,
+        "condition": {
+          "isRaining": true
+        }
+      },
+      "condition": {
+        "minSkyLight": 8,
+        "maxSkyLight": 15,
+        "biomes": [
+          "#cobblemon:is_desert"
+        ],
+        "isRaining": true
+      },
+      "herdablePokemon": [
+        {
+          "pokemon": "vibrava",
+          "weight": 90.0,
+          "levelRange": "37-37",
+          "levelRangeOffset": "-2-4",
+          "maxTimes": 7,
+          "isLeader": true,
+          "isFollower": true
+        },
+        {
+          "pokemon": "flygon",
+          "weight": 10.0,
+          "levelRange": "46-47",
+          "levelRangeOffset": "-1-5",
+          "maxTimes": 1,
+          "isLeader": true,
+          "isFollower": false
+        }
+      ]
+    }
+  ]
+}
