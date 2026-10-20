@@ -19,7 +19,11 @@ Rules (matching how the Cobblemon 1.7 packs were built):
 Combining packs (mix-and-match) is handled by a spawn rule that every pack ships an identical copy of:
   - Each pack also ships a biome tag, spawnfilter:gen<N>_enabled, which only exists when that pack is installed.
   - data/spawnfilter/spawn_rules/generation_filter.json uses those tags to:
-      * only allow habitat spawns (Cobblemon 1.8 habitat structures) from installed generations, and
+      * only allow habitat spawns (Cobblemon 1.8 habitat structures) from installed generations. Cobblemon 1.8.2
+        only shows a rule the species of a habitat spawn (its ID, "habitat_cobblemon:vulpix"), not its form, so a
+        species that habitats spawn in more than one generation's form (Vulpix and Alolan Vulpix) needs all of
+        those generations installed. Species that habitats only spawn in one form (Alolan Geodude) are exact.
+        Anything else about a habitat spawn reads as 0 to a rule and crashes the game, so the rule must not use it.
       * pick the right version of every herd that mixes generations. All versions of those herds are in
         data/spawnfilter/spawn_pool_world/herds in every pack, and the rule only allows the one matching the
         installed generations (Gen 2 alone: just the Alpha Crobat; Gen 1 + 2: Cobblemon's own Crobat herd).
@@ -46,10 +50,7 @@ REGION_GEN = {
     "hisuian": 8, "region_bias=hisui": 8, "hisuibias": 8,
     "paldean": 9,
 }
-# How the rule spots a regional form in a Pokémon's properties string (e.g. "sandshrew alolan=true")
-REGION_MARKERS = {7: ["alola"], 8: ["galar", "hisui"], 9: ["paldea", "bull_breed"]}
-
-HABITAT_ID = "habitat_"  # Cobblemon names every habitat spawn "habitat_<species>"
+HABITAT_ID = "habitat_"  # Cobblemon names every habitat spawn "habitat_<namespace>:<species>"
 VARIANT_ID = "__sf."  # Mixed-gen herd versions are named "<herd id>__sf.in1.in2.out4." (installed/missing gens)
 
 
@@ -113,6 +114,27 @@ def herd_part(spawn, members, gens):
     return {**spawn, "herdablePokemon": kept}
 
 
+def load_habitat_entries(habitat_dir, species_gens):
+    """Every habitat pool entry as (pool name, species, generation of the form it spawns)."""
+    entries = []
+    for filename in sorted(os.listdir(habitat_dir)):
+        if filename.endswith(".json"):
+            for spawn in read_json(os.path.join(habitat_dir, filename))[1]["spawns"]:
+                species = re.sub(r"[^a-z0-9]", "", spawn["species"].lower().split(":")[-1])
+                modifiers = (spawn.get("modifiers") or "").split()
+                entries.append((filename[:-len(".json")], species, pokemon_gen(" ".join([species] + modifiers), species_gens)))
+    return entries
+
+
+def habitat_requirements(species_gens, habitat_entries):
+    """Which generations must be installed for a habitat to spawn each species: every generation whose form of it
+    a habitat spawns (a rule can't tell the forms apart), or its own generation if no habitat spawns it."""
+    required = {}
+    for _, species, gen in habitat_entries:
+        required.setdefault(species, set()).add(gen)
+    return {s: required.get(s, {g}) for s, g in species_gens.items()}
+
+
 def species_in(spawn):
     if "herdablePokemon" in spawn:
         return [m["pokemon"] for m in spawn["herdablePokemon"]]
@@ -156,26 +178,18 @@ def quoted(text):
     return f"'{text}'"
 
 
-def habitat_allow(species_gens):
-    props = "v.spawn_detail.pokemon.to_string(' ')"
-    species = "v.spawn_detail.pokemon.species"
+def habitat_allow(requirements):
+    # The species as a space-padded word: "habitat_cobblemon:vulpix" -> " vulpix ", so it only matches whole names
+    # (porygon isn't found inside porygonz). Another namespace stays "habitat_<mod>:..." and matches nothing.
+    species = f"q.replace('# ', '#', q.replace(v.spawn_detail.id, {quoted(HABITAT_ID + 'cobblemon:')}, ' '))"
 
-    def regional(gen):
-        return "(" + " || ".join(contains(props, quoted(marker)) for marker in REGION_MARKERS[gen]) + ")"
+    def word_list(names):
+        return quoted(" " + " ".join(sorted(names)) + " ")  # Space-separated: Cobblemon's own Molang strings use spaces
 
-    def member(gen):
-        names = sorted(s for s, g in species_gens.items() if g == gen)
-        check = contains(quoted(" ".join(names)), species)  # Space-separated: Cobblemon's own Molang strings use spaces
-        # A name can also be found inside a longer name from this gen (porygon inside porygonz), so rule those out
-        lookalikes = sorted(s for s, g in species_gens.items() if g != gen and any(s in name for name in names))
-        if lookalikes:
-            check += " && !(" + " || ".join(f"{species} == {quoted(s)}" for s in lookalikes) + ")"
-        return f"({check})"
-
-    regional_forms = [f"({regional(g)} && {gen_enabled(g)})" for g in REGION_MARKERS]
-    not_regional = "!(" + " || ".join(regional(g) for g in REGION_MARKERS) + ")"
-    native = " || ".join(f"({member(g)} && {gen_enabled(g)})" for g in GENS)
-    return " || ".join(regional_forms + [f"({not_regional} && ({native}))"])
+    known = contains(word_list(requirements), species)  # Unknown species are blocked
+    needs = [f"(!({contains(word_list(s for s, gens in requirements.items() if g in gens), species)}) || {gen_enabled(g)})"
+             for g in GENS]
+    return " && ".join([known] + needs)
 
 
 def herd_variant_allow():
@@ -187,13 +201,13 @@ def herd_variant_allow():
     )
 
 
-def generation_rule(species_gens):
+def generation_rule(requirements):
     spawn_id = "v.spawn_detail.id"
     return {
         "displayName": "Cobblemon Spawn Filters: only spawn Pokemon from installed generations",
         "enabled": True,
         "components": [
-            {"type": "filter", "spawnDetailSelector": contains(spawn_id, quoted(HABITAT_ID)), "allow": habitat_allow(species_gens)},
+            {"type": "filter", "spawnDetailSelector": contains(spawn_id, quoted(HABITAT_ID)), "allow": habitat_allow(requirements)},
             {"type": "filter", "spawnDetailSelector": contains(spawn_id, quoted(VARIANT_ID)), "allow": herd_variant_allow()},
         ],
     }
@@ -212,10 +226,14 @@ def enabled_tag():
 def compile_molang(expression):
     """Turns one of the generated Molang expressions into Python, to check the rule without starting Minecraft."""
     assert "!=" not in expression
+    # Only use values Cobblemon is known to fill in for every spawn. A missing one reads as the number 0, and a
+    # q.* function handed a number instead of text throws, which crashes the game (habitat spawns in 1.8.2 have
+    # no v.spawn_detail.pokemon, for one).
+    used = set(re.findall(r"\b[qv]\.[a-z_.]+", expression))
+    assert used <= {"q.is_included", "q.replace", "v.spawn_detail.id", "v.spawnable_position.biome.is_in"}, used
     python = re.sub(rf"v\.spawnable_position\.biome\.is_in\('#{SHARED}:gen(\d)_enabled'\)", r"enabled(\1)", expression)
     for molang, replacement in [
-        ("q.is_included(", "contains("), ("v.spawn_detail.pokemon.to_string(' ')", "props"),
-        ("v.spawn_detail.pokemon.species", "species"), ("v.spawn_detail.id", "spawn_id"),
+        ("q.is_included(", "contains("), ("q.replace(", "replace("), ("v.spawn_detail.id", "spawn_id"),
         ("&&", " and "), ("||", " or "), ("!", " not "),
     ]:
         python = python.replace(molang, replacement)
@@ -223,46 +241,42 @@ def compile_molang(expression):
     return compile(python, "<rule>", "eval")
 
 
-def check_rule(rule, species_gens, herds, root_ids, habitat_dir):
+def check_rule(rule, requirements, herds, root_ids, habitat_entries):
     """Simulates the rule for every combination of installed generations and raises if anything is off."""
-    for key, gen in REGION_GEN.items():
-        assert any(marker in key for marker in REGION_MARKERS[gen]), key
     habitat, variant = rule["components"]
     habitat_selector, habitat_allowed = compile_molang(habitat["spawnDetailSelector"]), compile_molang(habitat["allow"])
     variant_selector, variant_allowed = compile_molang(variant["spawnDetailSelector"]), compile_molang(variant["allow"])
 
-    def run(code, installed, spawn_id="", species="", props=""):
+    def run(code, installed, spawn_id):
         return bool(eval(code, {"__builtins__": {}}, {
             "enabled": installed.__contains__, "contains": lambda text, search: search in text,
-            "spawn_id": spawn_id, "species": species, "props": props,
+            "replace": lambda text, search, replacement: text.replace(search, replacement), "spawn_id": spawn_id,
         }))
 
-    # Habitat entries: (species, properties string as Cobblemon prints it, generation)
-    habitat_entries = {(s, s, g) for s, g in species_gens.items()}
-    if os.path.isdir(habitat_dir):
-        for filename in os.listdir(habitat_dir):
-            for spawn in read_json(os.path.join(habitat_dir, filename))[1]["spawns"]:
-                species = re.sub(r"[^a-z0-9]", "", spawn["species"].lower().split(":")[-1])
-                modifiers = (spawn.get("modifiers") or "").split()
-                props = " ".join([species] + [m if "=" in m else f"{m}=true" for m in modifiers])
-                habitat_entries.add((species, props, pokemon_gen(" ".join([species] + modifiers), species_gens)))
+    # Every species (not only the ones Cobblemon's habitats use) in every form habitats spawn it in
+    entries = {(s, g) for s, gens in requirements.items() for g in gens}
+    assert {(s, g) for _, s, g in habitat_entries} <= entries
     variants = {h: list(h.variants()) for h in herds if h.mixed}
 
     # Each component must only pick out its own spawns; regular spawns and single-gen herds are left alone
     for spawn_id in root_ids + [h.spawn["id"] for h in herds if not h.mixed]:
         assert not run(habitat_selector, set(), spawn_id) and not run(variant_selector, set(), spawn_id), spawn_id
-    for species, _, _ in habitat_entries:
+    for species, _ in entries:
         spawn_id = f"{HABITAT_ID}cobblemon:{species}"
         assert run(habitat_selector, set(), spawn_id) and not run(variant_selector, set(), spawn_id), spawn_id
     for versions in variants.values():
         for _, v in versions:
             assert run(variant_selector, set(), v["id"]) and not run(habitat_selector, set(), v["id"]), v["id"]
+    # Unknown species and other mods' species are blocked even with everything installed
+    for spawn_id in (f"{HABITAT_ID}cobblemon:missingno", f"{HABITAT_ID}othermod:vulpix", f"{HABITAT_ID}cobblemon:"):
+        assert not run(habitat_allowed, set(GENS), spawn_id), spawn_id
 
     for size in range(1, 10):
         for installed in map(set, itertools.combinations(GENS, size)):
-            for species, props, gen in habitat_entries:
-                spawn_id = f"{HABITAT_ID}cobblemon:{species}"
-                assert run(habitat_allowed, installed, spawn_id, species, props) == (gen in installed), (props, installed)
+            for species, gen in entries:
+                allowed = run(habitat_allowed, installed, f"{HABITAT_ID}cobblemon:{species}")
+                assert allowed == (requirements[species] <= installed), (species, installed)
+                assert not allowed or gen in installed, (species, gen, installed)  # Never another generation's form
 
             for herd, versions in variants.items():
                 active = [(gens, v) for gens, v in versions if run(variant_allowed, installed, v["id"])]
@@ -275,7 +289,7 @@ def check_rule(rule, species_gens, herds, root_ids, habitat_dir):
                 if len(installed) == 9 and herd.owners:
                     assert {**active[0][1], "id": herd.spawn["id"]} == herd.spawn  # Cobblemon's own herd, exactly once
     print(f"Rule checked against all 511 combinations of installed generations "
-          f"({len(habitat_entries)} habitat entries, {sum(map(len, variants.values()))} herd versions)")
+          f"({len(entries)} habitat species/forms, {sum(map(len, variants.values()))} herd versions)")
 
 
 def main(data_dir, pack_pattern):
@@ -332,9 +346,22 @@ def main(data_dir, pack_pattern):
         elif herd.owners:
             placed[herd.owners.copy().pop()].setdefault(herd.rel_path, []).append(herd.spawn)
 
-    rule = generation_rule(species_gens)
+    habitat_dir = os.path.join(data_dir, "habitat_pools")
+    habitat_entries = load_habitat_entries(habitat_dir, species_gens) if os.path.isdir(habitat_dir) else []
+    requirements = habitat_requirements(species_gens, habitat_entries)
+    rule = generation_rule(requirements)
     root_ids = [s["id"] for files in placed.values() for spawns in files.values() for s in spawns if "herdablePokemon" not in s]
-    check_rule(rule, species_gens, herds, root_ids, os.path.join(data_dir, "habitat_pools"))
+    check_rule(rule, requirements, herds, root_ids, habitat_entries)
+
+    pools = {}
+    for pool, species, _ in habitat_entries:
+        pools.setdefault(pool, set()).add(species)
+    for species, gens in sorted(requirements.items()):
+        if len(gens) > 1:
+            print(f"Habitats: {species} needs gens {sorted(gens)} (spawns in more than one generation's form)")
+    print("Habitats left empty with one pack: " + ", ".join(
+        f"Gen {g}: {sum(not any(requirements[s] <= {g} for s in found) for found in pools.values())}/{len(pools)}"
+        for g in GENS))
 
     def output(rel_path, spawns):
         text, data, indent = sources[rel_path]

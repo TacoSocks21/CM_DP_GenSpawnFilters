@@ -34,6 +34,7 @@ Herds that mix generations combine automatically, too. With only Gen 2 installed
 - Alpha Pokémon and herd spawns (Cobblemon 1.8+)
 - Habitat structures (Cobblemon 1.8+)
     - NOTE: Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby.
+    - NOTE: Some Pokémon spawn in habitats in both their regular and a regional form (example: Vulpix in Wildfire Scars, Alolan Vulpix in Snowy Grottos). Cobblemon doesn't let datapacks tell those apart in habitats, so habitats only spawn them when both generations are installed (Gen 1 + Gen 7 for Vulpix). They still spawn normally outside habitats.
 
 ## What this datapack **DOES NOT** affect:
 - Cobblemon structures (example: Gimmighouls spawning from the chests in Gimmighoul towers)

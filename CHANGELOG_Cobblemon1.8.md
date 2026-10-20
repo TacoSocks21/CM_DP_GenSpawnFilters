@@ -21,7 +21,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 1 Pokémon (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 12 of the 51 habitat types have no Gen 1 Pokémon.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 13 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Cubone, Diglett, Dugtrio, Marowak, Meowth, Ninetales, Persian, Raticate, Rattata, Sandshrew, Sandslash, Vulpix (with Gen 7); Ponyta, Rapidash (with Gen 8). They still spawn normally outside habitats.
 
 ---
 
@@ -41,7 +42,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 2 Pokémon (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 7 of the 51 habitat types have no Gen 2 Pokémon.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 7 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Corsola, Cyndaquil, Quilava, Typhlosion (with Gen 8); Wooper (with Gen 9). They still spawn normally outside habitats.
 
 ---
 
@@ -65,7 +67,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 3 Pokémon (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 9 of the 51 habitat types have no Gen 3 Pokémon.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 9 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Linoone, Zigzagoon (with Gen 8). They still spawn normally outside habitats.
 
 ---
 
@@ -91,7 +94,7 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 4 Pokémon (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 9 of the 51 habitat types have no Gen 4 Pokémon.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 9 of the 51 habitat types spawn nothing with only this pack installed.
 
 ---
 
@@ -116,7 +119,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 5 Pokémon (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 7 of the 51 habitat types have no Gen 5 Pokémon.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 9 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Braviary, Dewott, Lilligant, Oshawott, Petilil, Rufflet, Samurott, Stunfisk, Yamask (with Gen 8). They still spawn normally outside habitats.
 
 ---
 
@@ -140,7 +144,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 6 Pokémon (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 20 of the 51 habitat types have no Gen 6 Pokémon.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 23 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Avalugg, Bergmite, Goodra, Goomy, Sliggoo (with Gen 8). They still spawn normally outside habitats.
 
 ---
 
@@ -166,7 +171,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 7 Pokémon and Alolan forms (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 19 of the 51 habitat types have no Gen 7 Pokémon and Alolan forms.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 23 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Cubone, Diglett, Dugtrio, Marowak, Meowth, Ninetales, Persian, Raticate, Rattata, Sandshrew, Sandslash, Vulpix (with Gen 1). They still spawn normally outside habitats.
 
 ---
 
@@ -194,7 +200,8 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 8 Pokémon and Galarian/Hisuian forms (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 17 of the 51 habitat types have no Gen 8 Pokémon and Galarian/Hisuian forms.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 20 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Ponyta, Rapidash (with Gen 1); Corsola, Cyndaquil, Quilava, Typhlosion (with Gen 2); Linoone, Zigzagoon (with Gen 3); Braviary, Dewott, Lilligant, Oshawott, Petilil, Rufflet, Samurott, Stunfisk, Yamask (with Gen 5); Avalugg, Bergmite, Goodra, Goomy, Sliggoo (with Gen 6). They still spawn normally outside habitats.
 
 ---
 
@@ -220,4 +227,5 @@ Built for **Cobblemon 1.8.2** (Minecraft 1.21.1). If you're still on Cobblemon 1
 
 ### Habitat structures
 - The new Habitat structures from Cobblemon 1.8 now only spawn Gen 9 Pokémon and Paldean forms (or Pokémon from every generation you've installed, when combining packs).
-- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 18 of the 51 habitat types have no Gen 9 Pokémon and Paldean forms.
+- Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby. 18 of the 51 habitat types spawn nothing with only this pack installed.
+- Some Pokémon spawn in habitats in both their regular and a regional form (for example, Vulpix in Wildfire Scars and Alolan Vulpix in Snowy Grottos), and Cobblemon doesn't let datapacks tell the two apart there. So no other generation's form slips in, habitats only spawn these when both generations are installed: Wooper (with Gen 2). They still spawn normally outside habitats.
