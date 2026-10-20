@@ -1,0 +1,989 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Spawn Filter v2.0 Test Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=JetBrains+Mono:wght@400;600&family=Pixelify+Sans:wght@500;700&display=swap">
+<style>
+/* Layout: one reading column of numbered test procedures; commands sit in dark "chat bar" strips you copy into Minecraft. */
+:root {
+  --bg: #eef1ec;
+  --surface: #fbfcfa;
+  --ink: #1b211d;
+  --muted: #5b655d;
+  --line: #d2d9d0;
+  --accent: #2c7652;
+  --accent-soft: #dcece2;
+  --console: #1d2320;
+  --console-ink: #e3eae4;
+  --console-dim: #8fa095;
+  --pass: #2c7652;
+  --fail: #b03a3a;
+  --fail-soft: #f6e1df;
+  --warn: #9a6410;
+  --warn-soft: #f5ead6;
+  --cs-green: #2f8f3a;
+  --cs-yellow: #a07a00;
+  --cs-red: #c03a32;
+  --cs-purple: #8a45b8;
+  --font-display: "Pixelify Sans", "Courier New", monospace;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  --radius: 6px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #121614; --surface: #1a1f1c; --ink: #e2e8e3; --muted: #9aa59c; --line: #2d3530;
+    --accent: #64c290; --accent-soft: #1f3529; --console: #0b0e0c; --console-ink: #dde6df; --console-dim: #7d8d82;
+    --pass: #64c290; --fail: #e47a72; --fail-soft: #3a2220; --warn: #e2a64a; --warn-soft: #362b18;
+    --cs-green: #62cf6e; --cs-yellow: #e6c548; --cs-red: #ef6b62; --cs-purple: #c48ae8;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #121614; --surface: #1a1f1c; --ink: #e2e8e3; --muted: #9aa59c; --line: #2d3530;
+  --accent: #64c290; --accent-soft: #1f3529; --console: #0b0e0c; --console-ink: #dde6df; --console-dim: #7d8d82;
+  --pass: #64c290; --fail: #e47a72; --fail-soft: #3a2220; --warn: #e2a64a; --warn-soft: #362b18;
+  --cs-green: #62cf6e; --cs-yellow: #e6c548; --cs-red: #ef6b62; --cs-purple: #c48ae8;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 16px; line-height: 1.6; }
+.page { max-width: 820px; margin: 0 auto; padding-inline: 20px; padding-block: 32px 96px; display: grid; gap: 40px; }
+h1, h2, h3 { text-wrap: balance; line-height: 1.2; margin: 0; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(2rem, 6vw, 2.9rem); letter-spacing: 0.01em; }
+h2 { font-size: 1.5rem; }
+h3 { font-size: 1.1rem; }
+p { margin: 0; }
+a { color: var(--accent); }
+code, kbd { font-family: var(--font-mono); font-size: 0.88em; }
+:not(pre) > code { background: var(--accent-soft); padding: 0.1em 0.35em; border-radius: 4px; overflow-wrap: anywhere; }
+.muted { color: var(--muted); }
+.stack { display: grid; gap: 14px; }
+.stack-lg { display: grid; gap: 22px; }
+
+/* header */
+.masthead { display: grid; gap: 14px; }
+.eyebrow { font-family: var(--font-display); font-weight: 500; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.82rem; color: var(--accent); }
+.lede { font-size: 1.08rem; max-width: 65ch; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 18px; font-size: 0.92rem; color: var(--muted); }
+.facts b { color: var(--ink); font-weight: 700; }
+
+.progress { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--bg); padding-block: 10px; border-bottom: 1px solid var(--line); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.bar { flex: 1 1 200px; height: 10px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.bar > span { display: block; height: 100%; width: 0; background: var(--accent); transition: width 0.2s; }
+.progress output { font-variant-numeric: tabular-nums; font-weight: 700; min-width: 9ch; }
+
+button { font: inherit; cursor: pointer; }
+.btn { border: 1px solid var(--line); background: var(--surface); color: var(--ink); border-radius: var(--radius); padding: 6px 12px; font-size: 0.88rem; }
+.btn:hover { border-color: var(--accent); }
+.btn:focus-visible, .copy:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.btn.danger { color: var(--fail); }
+
+nav.toc { display: flex; flex-wrap: wrap; gap: 6px; }
+nav.toc a { text-decoration: none; font-size: 0.86rem; border: 1px solid var(--line); background: var(--surface); color: var(--ink); padding: 4px 10px; border-radius: 999px; }
+nav.toc a:hover { border-color: var(--accent); color: var(--accent); }
+
+/* sections */
+section { display: grid; gap: 18px; scroll-margin-top: 64px; }
+.sec-head { display: grid; gap: 6px; border-top: 2px solid var(--ink); padding-top: 14px; }
+.sec-num { font-family: var(--font-display); font-weight: 500; font-size: 0.85rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent); }
+.step { display: grid; gap: 10px; }
+.step > h3 { display: flex; gap: 10px; align-items: baseline; }
+.step > h3 .tag { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 600; color: var(--muted); }
+ol.plain, ul.plain { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; }
+
+/* commands */
+.cmd { display: flex; align-items: stretch; background: var(--console); color: var(--console-ink); border-radius: var(--radius); min-width: 0; }
+.cmd code { flex: 1; min-width: 0; padding: 9px 12px; white-space: pre-wrap; word-break: break-all; font-size: 0.86rem; line-height: 1.5; background: none; }
+.copy { flex: none; border: 0; border-left: 1px solid #ffffff1a; background: transparent; color: var(--console-dim); padding: 0 14px; font-size: 0.8rem; font-family: var(--font-mono); border-radius: 0 var(--radius) var(--radius) 0; }
+.copy:hover { color: var(--console-ink); background: #ffffff10; }
+.copy.done { color: var(--cs-green); }
+.cmds { display: grid; gap: 6px; }
+.cmd-note { font-size: 0.85rem; color: var(--muted); }
+
+details.packs { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+details.packs > summary { cursor: pointer; padding: 8px 12px; font-size: 0.92rem; display: flex; gap: 8px; align-items: center; flex-wrap: wrap; list-style: none; }
+details.packs > summary::-webkit-details-marker { display: none; }
+details.packs > summary::before { content: "▸"; color: var(--muted); }
+details.packs[open] > summary::before { content: "▾"; }
+details.packs .cmds { padding: 0 12px 12px; }
+.genset { display: inline-flex; gap: 3px; }
+.genset i { font-style: normal; font-family: var(--font-mono); font-size: 0.72rem; width: 1.55em; height: 1.55em; display: inline-grid; place-items: center; border-radius: 3px; border: 1px solid var(--line); color: var(--muted); }
+.genset i.on { background: var(--accent); border-color: var(--accent); color: var(--surface); font-weight: 600; }
+
+/* checks */
+.checks { display: grid; gap: 8px; margin: 0; padding: 0; list-style: none; }
+.check { display: grid; grid-template-columns: auto 1fr; gap: 10px; align-items: start; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 10px 12px; cursor: pointer; }
+.check input { width: 18px; height: 18px; margin: 3px 0 0; accent-color: var(--accent); }
+.check:has(input:checked) { border-color: var(--accent); background: var(--accent-soft); }
+.check span { min-width: 0; }
+.pass-label { font-weight: 700; color: var(--pass); }
+
+/* expectation tables */
+.table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); }
+table { border-collapse: collapse; width: 100%; font-size: 0.9rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); font-weight: 700; }
+tr:last-child td { border-bottom: 0; }
+td code { white-space: nowrap; }
+.yes { color: var(--pass); font-weight: 700; }
+.no { color: var(--fail); font-weight: 700; }
+
+.callout { border: 1px solid var(--line); background: var(--surface); border-radius: var(--radius); padding: 12px 14px; display: grid; gap: 6px; font-size: 0.95rem; }
+.callout.warn { background: var(--warn-soft); border-color: transparent; }
+.callout.fail { background: var(--fail-soft); border-color: transparent; }
+.callout-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 700; color: var(--muted); }
+.callout.warn .callout-label { color: var(--warn); }
+.callout.fail .callout-label { color: var(--fail); }
+
+.cs-sample { font-family: var(--font-mono); font-size: 0.84rem; background: var(--console); color: var(--console-ink); border-radius: var(--radius); padding: 10px 12px; overflow-wrap: anywhere; }
+.cs-green { color: var(--cs-green); } .cs-yellow { color: var(--cs-yellow); } .cs-red { color: var(--cs-red); } .cs-purple { color: var(--cs-purple); }
+
+/* tools */
+.tool { border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); padding: 14px; display: grid; gap: 10px; }
+.tool label { font-size: 0.85rem; color: var(--muted); }
+.tool input[type="text"], .tool select { font: inherit; font-family: var(--font-mono); font-size: 0.88rem; width: 100%; padding: 8px 10px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); color: var(--ink); }
+.decoded { font-size: 0.95rem; min-height: 1.6em; }
+.row-inline { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.row-inline > * { min-width: 0; }
+
+/* habitat reference */
+.ref td .genset i { width: 1.4em; height: 1.4em; font-size: 0.68rem; }
+.ref tr.dim td { opacity: 0.45; }
+.ref tr.empty-for td:first-child::after { content: "spawns nothing with only this gen"; display: block; font-size: 0.72rem; color: var(--fail); font-weight: 700; margin-top: 2px; }
+.ref .mini { font-size: 0.8rem; color: var(--muted); }
+.ref .both-gens { margin-top: 4px; color: var(--warn); }
+.ref .copy-sm { border: 1px solid var(--line); background: var(--bg); color: var(--ink); border-radius: 4px; font-size: 0.75rem; padding: 3px 8px; font-family: var(--font-mono); }
+.ref .copy-sm:hover { border-color: var(--accent); }
+.ref .copy-sm.done { color: var(--pass); border-color: var(--pass); }
+
+footer { font-size: 0.85rem; color: var(--muted); border-top: 1px solid var(--line); padding-top: 14px; }
+
+@media (max-width: 520px) {
+  .page { padding-inline: 16px; gap: 32px; }
+  th, td { padding: 7px 8px; }
+}
+@media (prefers-reduced-motion: reduce) { .bar > span { transition: none; } }
+</style>
+
+<div class="page">
+
+<header class="masthead">
+  <div class="eyebrow">Cobblemon 1.8.2 · Spawn Filter datapacks v2.0</div>
+  <h1>Spawn Filter v2.0 Test Plan</h1>
+  <p class="lede">A step-by-step in-game check of everything that changed for Cobblemon 1.8: rebuilt spawn files, the new habitat filtering, and herds that combine across packs. Every command has a copy button, and your ticked checks are remembered in this browser.</p>
+  <div class="facts">
+    <span><b>Minecraft</b> 1.21.1</span>
+    <span><b>Cobblemon</b> 1.8.2 (Fabric or NeoForge)</span>
+    <span><b>Packs</b> the nine <code>SpawnFilter_Gen#_Cobblemon1.8.2_v2.0.zip</code> files</span>
+    <span><b>Time</b> about 60–90 minutes</span>
+  </div>
+</header>
+
+<div class="progress" role="region" aria-label="Test progress">
+  <div class="bar" aria-hidden="true"><span id="bar-fill"></span></div>
+  <output id="progress-count">0 / 0 checks</output>
+  <button type="button" class="btn danger" id="reset-btn">Reset ticks</button>
+</div>
+
+<nav class="toc" aria-label="Sections">
+  <a href="#setup">Setup</a>
+  <a href="#reading">Reading results</a>
+  <a href="#t1">1 · Baseline</a>
+  <a href="#t2">2 · Gen 1 alone</a>
+  <a href="#t3">3 · Empty habitat</a>
+  <a href="#t4">4 · Regional forms</a>
+  <a href="#t5">5 · Combining packs</a>
+  <a href="#t6">6 · Herds</a>
+  <a href="#t7">7 · Nether &amp; End</a>
+  <a href="#t8">8 · Natural world</a>
+  <a href="#t9">9 · Fishing &amp; lag</a>
+  <a href="#report">If something fails</a>
+  <a href="#reference">Habitat reference</a>
+</nav>
+
+<!-- ===================== SETUP ===================== -->
+<section id="setup">
+  <div class="sec-head">
+    <div class="sec-num">Before you start</div>
+    <h2>Build the test lab</h2>
+    <p class="muted">Most tests run in a flat creative world, where a single habitat block gives predictable results. Test 8 repeats the checks in a normal world.</p>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-label">Updated 18 Oct: habitat crash fixed</div>
+    <p>The first build of v2.0 crashed the game near habitat blocks. Use the newly built zips. If a world crashed with the old ones, take the <code>SpawnFilter</code> zips out of <code>saves/&lt;world name&gt;/datapacks/</code> before opening it again, then copy in the new zips.</p>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-label">Updated 19 Oct: Test 6 lab spots fixed</div>
+    <p>The herds in Test 6 could never spawn at the old open field or covered room, because of conditions built into base Cobblemon. The packs were fine. If your lab world already exists, run the two build commands under <a href="#lab-spots">Three lab spots</a>, then redo Test 6.</p>
+  </div>
+
+  <div class="step">
+    <h3>Create the lab world</h3>
+    <ol class="plain">
+      <li>Create a new world: <b>Game Mode</b> Creative, <b>Allow Commands</b> On, <b>World Type</b> Superflat (the default "Classic Flat" preset, which is all Plains).</li>
+      <li>Close the game to the title screen, then copy all nine <code>.zip</code> files from the <code>SpawnFilter_Gen#_Cobblemon1.8.2_v2.0</code> folders into <code>saves/&lt;world name&gt;/datapacks/</code>.</li>
+      <li>Open the world again. The ground surface is at <b>Y −61</b>, so you stand at <b>Y −60</b>.</li>
+    </ol>
+  </div>
+
+  <div class="step">
+    <h3>Freeze the world so results stay readable</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/gamerule doDaylightCycle false</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/time set noon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/gamerule doWeatherCycle false</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/weather clear</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/gamerule doMobSpawning false</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/gamerule doPokemonSpawning false</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <p class="cmd-note"><code>doPokemonSpawning false</code> stops Pokémon from piling up on their own. <code>/checkspawn</code> and <code>/forcespawn</code> still work. If <code>/forcespawn</code> keeps saying it can't spawn anything somewhere it should, turn this gamerule back on for that test.</p>
+  </div>
+
+  <div class="step">
+    <h3>Confirm the packs and their marker tags loaded</h3>
+    <p>Each pack ships a tag named <code>spawnfilter:gen#_enabled</code> that only exists while that pack is installed. The shared spawn rule reads these tags to know which generations you have.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/datapack list enabled</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/locate biome #spawnfilter:gen1_enabled</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-setup-list"><span>The list shows all nine packs as <code>file/SpawnFilter_Gen#_Cobblemon1.8.2_v2.0.zip</code>.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-setup-tag"><span><code>/locate biome #spawnfilter:gen1_enabled</code> answers with a location (usually right where you stand). With the Gen 1 pack disabled, the same command fails to find anything.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-setup-log"><span>In <code>logs/latest.log</code>, searching for <code>spawnfilter</code> finds no errors (for example no <code>Error loading JSON for data: spawnfilter:generation_filter</code> and no tag loading errors).</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step" id="lab-spots">
+    <h3>Three lab spots</h3>
+    <p>Keep tests apart so they can't affect each other. A habitat block only reaches about 16 blocks, so 200 blocks between spots is plenty.</p>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Spot</th><th>Used for</th><th>Go there</th></tr></thead>
+        <tbody>
+          <tr><td><b>Habitat pad</b></td><td>Tests 1–5: one habitat block under your feet</td><td><code>/tp @s 0 -60 0</code></td></tr>
+          <tr><td><b>Open field</b></td><td>Regular spawns, Eevee herds (needs a small concrete patch)</td><td><code>/tp @s -200 -60 0</code></td></tr>
+          <tr><td><b>Dark room</b></td><td>Zubat herds and Alpha Crobat (need a sealed, pitch-black room with a planks floor)</td><td><code>/tp @s 200 -60 0</code></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Build both once. The first lays a 3 × 3 concrete patch at the open field. The second builds a sealed oak-planks box around the dark room spot. If you built the older stone roof there, you can leave it.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/fill -201 -61 -1 -199 -61 1 minecraft:white_concrete</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/fill 194 -61 -6 206 -56 6 minecraft:oak_planks hollow</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <p class="muted">These herds come with spawn presets in base Cobblemon. Eeveelution herds use <code>urban</code>, so they need concrete within 4 blocks. Zubat herds and Alpha Crobat use <code>derelict</code>, so they need no sky, light level 0, and a floor that isn't natural ground (grass, dirt, stone or sand). Without these builds, the herds don't spawn at all, even with no packs installed.</p>
+  </div>
+
+  <div class="step">
+    <h3>Your test tools</h3>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Command</th><th>What it does</th></tr></thead>
+        <tbody>
+          <tr><td><code>/checkspawn &lt;bucket&gt;</code></td><td>Lists what could spawn in an 8 × 16 × 8 block box around you, with chances. Buckets: <code>common</code>, <code>uncommon</code>, <code>rare</code>, <code>ultra-rare</code>, <code>boss</code> (Alphas). It uses the real spawner, so the filter rule applies to it.</td></tr>
+          <tr><td><code>/forcespawn &lt;amount&gt;</code></td><td>Spawns Pokémon right now from the area around you (same as <code>/spawnpokemonfrompool</code>). Spawning stops once about 9 Pokémon are nearby, so clear them between runs.</td></tr>
+          <tr><td><code>/kill @e[type=cobblemon:pokemon,distance=..48]</code></td><td>Clears wild Pokémon around you. Recall your own Pokémon first.</td></tr>
+          <tr><td><code>/data get entity @e[type=cobblemon:pokemon,sort=nearest,limit=1] Pokemon</code></td><td>Shows the nearest Pokémon's data. Look for <code>alolan</code>, <code>galarian</code> or <code>hisuian</code> to confirm a regional form.</td></tr>
+          <tr><td><code>/tick sprint 24000</code></td><td>Fast-forwards one in-game day of ticks. Habitats change which Pokémon they offer ("phases") once per day of ticks, and <code>/time add</code> does <b>not</b> change phases.</td></tr>
+          <tr><td><code>/datapack enable | disable "file/…zip"</code></td><td>Turns packs on and off without leaving the world. Each test lists the exact commands.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== READING RESULTS ===================== -->
+<section id="reading">
+  <div class="sec-head">
+    <div class="sec-num">Reading results</div>
+    <h2>What passing looks like</h2>
+  </div>
+  <div class="stack">
+    <p><b>The one rule behind every test:</b> with a set of packs installed, every Pokémon that <code>/checkspawn</code> lists or <code>/forcespawn</code> creates must belong to an installed generation. Regional forms count as their region's generation (Alolan = Gen 7, Galarian and Hisuian = Gen 8, Paldean = Gen 9).</p>
+    <p><code>/checkspawn</code> prints one line per Pokémon or herd. Regular and habitat spawns show the species name. Herds show their spawn ID instead, which is how you can see which herd version is active.</p>
+    <div class="cs-sample" aria-label="Example checkspawn output">
+      Spawns: Rattata: <span class="cs-green">41.3%</span>, Pidgey: <span class="cs-green">35.2%</span>, Spearow: <span class="cs-green">21.32%</span>, eeveelution-herd-1__sf.in1.out2.out4.out6.: <span class="cs-yellow">2.1%</span>, geodude-herd-1: <span class="cs-red">0.08%</span>
+    </div>
+    <p class="muted">Percent colors: <span class="cs-green">green</span> 5% and up, <span class="cs-yellow">yellow</span> under 5%, <span class="cs-red">red</span> under 0.1%, <span class="cs-purple">purple</span> under 0.01%. Regional forms show their plain species name here ("Geodude"), so confirm the form on a spawned Pokémon.</p>
+  </div>
+
+  <div class="tool">
+    <h3>Herd ID decoder</h3>
+    <p class="muted">Herds that mix generations ship in one version per combination of installed generations. Paste a herd ID from <code>/checkspawn</code> to see which combination it is for.</p>
+    <label for="herd-id">Herd ID</label>
+    <input type="text" id="herd-id" value="crobat-alpha-4__sf.in1.in2." spellcheck="false" autocomplete="off">
+    <div class="decoded" id="herd-decoded" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- ===================== TEST 1 ===================== -->
+<section id="t1">
+  <div class="sec-head">
+    <div class="sec-num">Test 1</div>
+    <h2>Baseline: no filter packs</h2>
+    <p class="muted">Proves the test habitat works in plain Cobblemon, so later results mean something.</p>
+  </div>
+
+  <div class="step">
+    <h3>Turn every pack off</h3>
+    <div data-packs=""></div>
+  </div>
+
+  <div class="step">
+    <h3>Place a Berry Patch habitat block at the pad</h3>
+    <p>Go to the pad (<code>/tp @s 0 -60 0</code>), then run both commands. The first clears the spot; an error from it on the very first run is fine.</p>
+    <div data-pad="cobblemon:berry_patch"></div>
+    <p class="cmd-note">The block looks like moss. It uses the Berry Patch spawn list, replaces normal spawns within 16 blocks (like Cobblemon's own habitats) and steps through its phases in order, one per in-game day.</p>
+  </div>
+
+  <div class="step">
+    <h3>Check it</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn common</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t1-mixed"><span><code>uncommon</code> lists Snorlax <b>and</b> Pokémon from other generations, such as Shuckle, Pachirisu, Munchlax and Togedemaru.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t1-replace"><span>Only Berry Patch Pokémon appear (Lickitung, Snorlax, Shuckle, Zigzagoon, Linoone, Plusle, Minun, Turtwig line, Pachirisu, Munchlax, Lickilicky, Tepig line, Chespin line, Togedemaru, Skwovet, Greedent, Morpeko). Plains Pokémon don't, because the habitat replaces normal spawns.</span></label></li>
+    </ul>
+    <div class="callout warn">
+      <div class="callout-label">Stop here if</div>
+      <p><code>/checkspawn</code> shows ordinary Plains Pokémon or nothing at all. The habitat block didn't take effect, so later tests can't tell you anything. Re-run the two pad commands while standing at <code>0 -60 0</code>, and report it if it still fails.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEST 2 ===================== -->
+<section id="t2">
+  <div class="sec-head">
+    <div class="sec-num">Test 2</div>
+    <h2>Gen 1 alone</h2>
+    <p class="muted">The basic promise: only Gen 1 spawns, in regular spawning and in habitats.</p>
+  </div>
+
+  <div class="step">
+    <h3>Install only Gen 1</h3>
+    <div data-packs="1"></div>
+  </div>
+
+  <div class="step">
+    <h3>Regular spawns at the open field</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/tp @s -200 -60 0</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn common</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn rare</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t2-regular"><span>Every species listed is Gen 1 (Bulbasaur to Mew). Herd lines are fine as long as they are Gen 1 herds.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>The Berry Patch pad</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/tp @s 0 -60 0</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn common</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t2-hab-ok"><span><code>/checkspawn</code> works on the pad instead of printing "An unexpected error occurred". (That error, and a crash a moment later, was the bug in the first build of v2.0.)</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t2-hab-yes"><span><code>uncommon</code> lists Snorlax (and Lickitung, except on the habitat's phase-1 day, when Lickitung is <code>common</code> instead).</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t2-hab-no"><span>None of these appear in any bucket: Shuckle, Zigzagoon, Linoone, Plusle, Minun, Turtwig, Pachirisu, Munchlax, Lickilicky, Tepig, Chespin, Togedemaru, Skwovet, Greedent, Morpeko.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t2-hab-common"><span><code>common</code> lists only Lickitung, or says nothing can spawn. Both are correct: on most days this habitat's common Pokémon are from other generations.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Spawn for real and check several days</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/kill @e[type=cobblemon:pokemon,distance=..48]</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/forcespawn 5</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/tick sprint 24000</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t2-force"><span><code>/forcespawn 5</code> only creates Snorlax and Lickitung.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t2-tick"><span>Run <code>/gamerule doPokemonSpawning true</code>, stay on the pad for a minute, and the game doesn't crash. Then set it back to <code>false</code>.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t2-days"><span>After <code>/tick sprint 24000</code> twice, re-running <code>/checkspawn uncommon</code> and <code>common</code> still shows only Gen 1.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== TEST 3 ===================== -->
+<section id="t3">
+  <div class="sec-head">
+    <div class="sec-num">Test 3</div>
+    <h2>A habitat with none of your generations</h2>
+    <p class="muted">The expected trade-off: habitats replace normal spawning around them, so a habitat without your generations spawns nothing nearby. Bug Mound only has Gen 5, 7 and 8 Pokémon.</p>
+  </div>
+
+  <div class="step">
+    <h3>Swap the pad to Bug Mound (Gen 1 still installed)</h3>
+    <div data-pad="cobblemon:bug_mound"></div>
+    <div class="cmds">
+      <div class="cmd"><code>/checkspawn common</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t3-empty"><span>Both buckets report that nothing can spawn, and <code>/forcespawn 3</code> can't spawn anything. <span class="pass-label">This is a pass.</span></span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Switch to Gen 5 only</h3>
+    <div data-packs="5"></div>
+    <div class="cmds">
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t3-gen5"><span>Venipede, Whirlipede, Scolipede and Heatmor appear.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t3-not"><span>Salandit, Salazzle (Gen 7), Silicobra, Sandaconda, Sizzlipede and Centiskorch (Gen 8) do not.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== TEST 4 ===================== -->
+<section id="t4">
+  <div class="sec-head">
+    <div class="sec-num">Test 4</div>
+    <h2>Regional forms go to their region's generation</h2>
+    <p class="muted">In habitats, the packs can see a Pokémon's species but not its form. A species that habitats only spawn in its regional form (the Alolan Geodude line, Hisuian Zorua) goes to the region's generation. A species that habitats spawn in both forms (Vulpix, Ponyta, Corsola and 32 others) only spawns from habitats when both generations are installed, so no other generation's form can slip in.</p>
+  </div>
+
+  <div class="step">
+    <h3><span>4a · Natural Lightning Rod: Alolan Geodude line</span></h3>
+    <div data-pad="cobblemon:natural_lightning_rod"></div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Installed</th><th>Should appear</th><th>Must not appear</th></tr></thead>
+        <tbody>
+          <tr><td>Gen 1 only</td><td>Jolteon, plus some of Magnemite, Magneton, Electabuzz</td><td>Geodude, Graveler, Golem</td></tr>
+          <tr><td>Gen 7 only</td><td>Geodude, Graveler, Golem (all Alolan)</td><td>Jolteon, Magnemite, Electabuzz</td></tr>
+          <tr><td>Gen 1 + Gen 7</td><td>Both groups</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div data-packs="1"></div>
+    <div data-packs="7"></div>
+    <div data-packs="1,7"></div>
+    <div class="cmds">
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/forcespawn 3</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/data get entity @e[type=cobblemon:pokemon,sort=nearest,limit=1] Pokemon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t4a-g1"><span>Gen 1 only: no Geodude, Graveler or Golem in any bucket.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4a-g7"><span>Gen 7 only: Geodude, Graveler and Golem appear, and a spawned one shows <code>alolan</code> in its data.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4a-both"><span>Gen 1 + Gen 7: both groups appear.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>4b · Fae Mounds: Galarian Ponyta (needs Gen 1 + Gen 8)</h3>
+    <p>Habitats spawn regular Ponyta too (Sunflowerbed Clearing), so Ponyta and Rapidash need both packs.</p>
+    <div data-pad="cobblemon:fae_mounds"></div>
+    <div data-packs="1"></div>
+    <div data-packs="8"></div>
+    <div data-packs="1,8"></div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t4b-g1"><span>Gen 1 only: nothing can spawn.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4b-g8"><span>Gen 8 only: Hatenna, Hattrem, Hatterene, Impidimp, Morgrem and Grimmsnarl can appear, but never Ponyta or Rapidash.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4b-both"><span>Gen 1 + Gen 8: Ponyta and Rapidash appear too, in <code>uncommon</code> (or <code>common</code> on the phase-1 day), and a spawned Ponyta shows <code>galarian</code>.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>4c · Skeletal Fall: Hisuian Zorua and Galarian Corsola (needs Gen 2 + Gen 8)</h3>
+    <p>Habitats only spawn Zorua and Zoroark as Hisuian, so they go to Gen 8 alone. Corsola is regular in three other habitats, so it needs both packs.</p>
+    <div data-pad="cobblemon:skeletal_fall"></div>
+    <div data-packs="2"></div>
+    <div data-packs="5"></div>
+    <div data-packs="8"></div>
+    <div data-packs="2,8"></div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t4c-g2"><span>Gen 2 only: no Corsola, ever. (Houndour and Houndoom show up only on the phase-3 day; otherwise nothing spawns.)</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4c-g5"><span>Gen 5 only: no Zorua or Zoroark, so nothing spawns.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4c-g8"><span>Gen 8 only: Cursola, Zorua and Zoroark appear (spawned Zorua and Zoroark show <code>hisuian</code>), but never Corsola.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4c-both"><span>Gen 2 + Gen 8: Corsola appears too, and a spawned one shows <code>galarian</code>.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>4d · Vulpix in both forms (needs Gen 1 + Gen 7)</h3>
+    <p>Oak Wildfire Scars spawn regular Vulpix and Ninetales; Snowy Grottos spawn Alolan ones. Neither should appear with only one of the two packs.</p>
+    <div data-pad="cobblemon:oak_wildfire_scar"></div>
+    <div data-packs="1"></div>
+    <div data-packs="1,7"></div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t4d-oak1"><span>Oak Wildfire Scar, Gen 1 only: Scyther, Pinsir and Flareon can appear, but never Vulpix or Ninetales.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4d-oak17"><span>Oak Wildfire Scar, Gen 1 + Gen 7: Vulpix and Ninetales appear (<code>common</code> on the phase-1 day, otherwise <code>uncommon</code>), with no <code>alolan</code> in their data.</span></label></li>
+    </ul>
+    <div data-pad="cobblemon:snowy_grotto"></div>
+    <div data-packs="7"></div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t4d-snow7"><span>Snowy Grotto, Gen 7 only: Rockruff and Lycanroc can appear (not on the phase-9 day), but never Vulpix or Ninetales.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t4d-snow17"><span>Snowy Grotto, Gen 1 + Gen 7: Vulpix and Ninetales appear, and a spawned one shows <code>alolan</code>.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== TEST 5 ===================== -->
+<section id="t5">
+  <div class="sec-head">
+    <div class="sec-num">Test 5</div>
+    <h2>Combining packs, in any order</h2>
+    <p class="muted">Habitats should offer exactly the installed generations, whichever pack loads last.</p>
+  </div>
+
+  <div class="step">
+    <h3>Gen 1 + Gen 4 on the Berry Patch</h3>
+    <div data-pad="cobblemon:berry_patch"></div>
+    <div data-packs="1,4"></div>
+    <div class="cmds">
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t5-both"><span>Snorlax, Pachirisu, Munchlax and Lickilicky all appear.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t5-none"><span>Shuckle, Plusle, Minun, Togedemaru, Skwovet, Greedent and Morpeko do not.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Flip the load order</h3>
+    <p><code>first</code> puts a pack at the lowest priority and <code>last</code> at the highest. Try Gen 4 in both positions and check each time.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/datapack disable "file/SpawnFilter_Gen4_Cobblemon1.8.2_v2.0.zip"</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/datapack enable "file/SpawnFilter_Gen4_Cobblemon1.8.2_v2.0.zip" first</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/datapack disable "file/SpawnFilter_Gen4_Cobblemon1.8.2_v2.0.zip"</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/datapack enable "file/SpawnFilter_Gen4_Cobblemon1.8.2_v2.0.zip" last</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t5-order"><span>The <code>uncommon</code> list is the same in both orders.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Remove a pack mid-game</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/datapack disable "file/SpawnFilter_Gen4_Cobblemon1.8.2_v2.0.zip"</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t5-live"><span>Pachirisu, Munchlax and Lickilicky disappear straight away; Snorlax stays.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== TEST 6 ===================== -->
+<section id="t6">
+  <div class="sec-head">
+    <div class="sec-num">Test 6</div>
+    <h2>Herds that mix generations</h2>
+    <p class="muted">Each herd that mixes generations exists in several versions, and exactly one should be active for the installed generations. Herds with a single generation keep their usual IDs (for example <code>rattata-herd-1</code>) and behave as before.</p>
+  </div>
+
+  <div class="step">
+    <h3>6a · Eeveelution herd at the open field</h3>
+    <p><code>eeveelution-herd-1</code> is an <code>uncommon</code> herd. It spawns under open sky in any overworld biome, on natural ground with concrete within 4 blocks (Cobblemon's <code>urban</code> preset). The open field's concrete patch covers this. The herd mixes Gen 1 (Eevee, Vaporeon, Jolteon, Flareon), Gen 2 (Espeon, Umbreon), Gen 4 (Leafeon, Glaceon) and Gen 6 (Sylveon).</p>
+    <p class="muted">If no <code>eeveelution-herd-1</code> line shows for any row, check that the concrete patch is under you. The <code>urban</code> preset also blocks this herd inside villages, which the Classic Flat preset can generate. If a village sits on the open field, move to plain grass and lay the patch there.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/tp @s -200 -60 0</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Installed</th><th>The one <code>eeveelution-herd-1</code> line you should see</th></tr></thead>
+        <tbody>
+          <tr><td>Gen 1</td><td><code>eeveelution-herd-1__sf.in1.out2.out4.out6.</code></td></tr>
+          <tr><td>Gen 2</td><td><code>eeveelution-herd-1__sf.in2.out1.out4.out6.</code></td></tr>
+          <tr><td>Gen 1 + 2</td><td><code>eeveelution-herd-1__sf.in1.in2.out4.out6.</code></td></tr>
+          <tr><td>Gen 1 + 2 + 4 + 6</td><td><code>eeveelution-herd-1__sf.in1.in2.in4.in6.</code></td></tr>
+          <tr><td>Gen 3 only</td><td>No <code>eeveelution-herd-1</code> line at all</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div data-packs="1"></div>
+    <div data-packs="2"></div>
+    <div data-packs="1,2"></div>
+    <div data-packs="1,2,4,6"></div>
+    <div data-packs="3"></div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t6a-match"><span>For each row, the listed version is the one shown.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t6a-one"><span><code>eeveelution-herd-1</code> never appears twice in the same <code>/checkspawn</code> output.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>6b · Zubat herd and Alpha Crobat in the dark room</h3>
+    <p><code>zubat-herd-4</code> (<code>uncommon</code>) and <code>crobat-alpha-4</code> (<code>boss</code>) use Cobblemon's <code>derelict</code> preset. They need no sky, light level 0, and a floor that isn't natural ground. The sealed planks box gives them that. Don't place a torch inside.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/tp @s 200 -60 0</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn boss</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Installed</th><th><code>uncommon</code> shows</th><th><code>boss</code> shows</th></tr></thead>
+        <tbody>
+          <tr><td>Gen 1</td><td><code>zubat-herd-4__sf.in1.out2.</code> (Zubat, Golbat)</td><td>No <code>crobat-alpha-4</code></td></tr>
+          <tr><td>Gen 2</td><td>No <code>zubat-herd-4</code></td><td><code>crobat-alpha-4__sf.in2.out1.</code> (Alpha Crobat alone)</td></tr>
+          <tr><td>Gen 1 + 2</td><td><code>zubat-herd-4__sf.in1.in2.</code> (Crobat can join)</td><td><code>crobat-alpha-4__sf.in1.in2.</code> (leads Zubat and Golbat)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div data-packs="1"></div>
+    <div data-packs="2"></div>
+    <div data-packs="1,2"></div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t6b-match"><span>All three rows match.</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>6c · Optional: watch a combined herd spawn</h3>
+    <p>With Gen 1 + 2 installed in the dark room, temporarily allow natural spawning and force spawns until a Zubat herd appears. Clear Pokémon between attempts.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/gamerule doPokemonSpawning true</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/forcespawn 3</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/kill @e[type=cobblemon:pokemon,distance=..48]</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/gamerule doPokemonSpawning false</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t6c-herd"><span>With Gen 1 + 2, Zubat herds sometimes include a Crobat. With Gen 1 alone, they never do.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== TEST 7 ===================== -->
+<section id="t7">
+  <div class="sec-head">
+    <div class="sec-num">Test 7</div>
+    <h2>Nether and End habitats</h2>
+    <p class="muted">The marker tags cover Overworld, Nether and End biomes. A missing dimension would make habitats there spawn nothing, even with the right pack installed.</p>
+  </div>
+
+  <div class="step">
+    <h3>7a · Nether: Strange Crimson Fungal Dwelling with Gen 1</h3>
+    <div data-packs="1"></div>
+    <p>Teleport, carve out a room, lay a floor, then place the habitat under your feet:</p>
+    <div class="cmds">
+      <div class="cmd"><code>/execute in minecraft:the_nether run tp @s 0 100 0</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/fill ~-8 ~ ~-8 ~8 ~4 ~8 minecraft:air</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/fill ~-8 ~-1 ~-8 ~8 ~-1 ~8 minecraft:netherrack</code><button type="button" class="copy">Copy</button></div>
+      <div data-here="cobblemon:crimson_fungal_dwelling"></div>
+      <div class="cmd"><code>/checkspawn common</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t7-nether"><span>Paras and Parasect appear (<code>common</code> on the phase-1 day, <code>uncommon</code> otherwise), and nothing from other generations does (no Venipede, Tepig, Fletchling, Lechonk or Hisuian Cyndaquil).</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>7b · End: Chorus Briar with Gen 5</h3>
+    <div data-packs="5"></div>
+    <div class="cmds">
+      <div class="cmd"><code>/execute in minecraft:the_end run tp @s 100 60 0</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/fill ~-8 ~ ~-8 ~8 ~4 ~8 minecraft:air</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/fill ~-8 ~-1 ~-8 ~8 ~-1 ~8 minecraft:end_stone</code><button type="button" class="copy">Copy</button></div>
+      <div data-here="cobblemon:chorus_briar"></div>
+      <div class="cmd"><code>/checkspawn uncommon</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t7-end"><span>Sigilyph and the Solosis line appear (Elgyem and Beheeyem too on one day of the cycle); Beldum, Metang, Metagross, Inkay and Malamar never do.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t7-end-g1"><span>Switching to Gen 1 only leaves nothing spawning here.</span></label></li>
+    </ul>
+    <p class="cmd-note">Return to the lab with <code>/execute in minecraft:overworld run tp @s 0 -60 0</code>.</p>
+  </div>
+</section>
+
+<!-- ===================== TEST 8 ===================== -->
+<section id="t8">
+  <div class="sec-head">
+    <div class="sec-num">Test 8</div>
+    <h2>Real habitats in a normal world</h2>
+    <p class="muted">Repeats the checks on habitats as Cobblemon generates them, with all their blocks and terrain.</p>
+  </div>
+
+  <div class="step">
+    <h3>Set up the field world</h3>
+    <ol class="plain">
+      <li>Create a second creative world with commands on, World Type <b>Default</b>, and the same nine zips in its <code>datapacks</code> folder.</li>
+      <li>Run the freeze commands from Setup, but leave <code>doPokemonSpawning</code> on if you want to watch natural spawns.</li>
+    </ol>
+  </div>
+
+  <div class="step">
+    <h3>Find a habitat and stand in the middle of it</h3>
+    <div class="cmds">
+      <div class="cmd"><code>/locate structure #cobblemon:habitats/habitats</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/locate structure cobblemon:habitats/berry_patch</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/locate structure cobblemon:habitats/natural_lightningrod</code><button type="button" class="copy">Copy</button></div>
+      <div class="cmd"><code>/locate structure cobblemon:habitats/carved_ice_spikes</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <p>Click the green coordinates in chat to get a teleport command, or land safely on the surface with <code>/spreadplayers &lt;x&gt; &lt;z&gt; 0 1 false @s</code>. Habitat blocks look like ordinary blocks; press F3 and look for <code>cobblemon:habitat_block</code> as the targeted block to find them. In creative, right-clicking one opens its settings, so close that screen without changing anything.</p>
+    <div class="callout">
+      <div class="callout-label">Always compare against a baseline</div>
+      <p>Real habitats have many habitat blocks close together. Check each one first with every pack off (Test 1 commands), note what <code>/checkspawn</code> shows, then turn packs on. With packs, you should see that same list minus the generations you don't have. If the baseline itself shows little or nothing in the middle, try a spot nearer the edge.</p>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t8-berry"><span>Berry Patch, Gen 1 only: baseline minus every non-Gen-1 Pokémon.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t8-rod"><span>Natural Lightning Rod (mountains), Gen 1 only: no Geodude, Graveler or Golem.</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t8-ice"><span>Carved Ice Spikes (freezing biomes), Gen 1 only: Jynx only; no Smoochum, Sandshrew, Sandslash, Bergmite or Avalugg (those are Gen 2 or regional forms here).</span></label></li>
+      <li><label class="check"><input type="checkbox" id="c-t8-ice7"><span>Carved Ice Spikes, Gen 1 + Gen 7: Sandshrew and Sandslash appear (Alolan) as well as Jynx, but only near habitat blocks currently on phase 1. With Gen 7 alone, this habitat spawns nothing. Each block rolls its own phase per day, so use <code>/tick sprint 24000</code> a few times if nothing shows yet.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== TEST 9 ===================== -->
+<section id="t9">
+  <div class="sec-head">
+    <div class="sec-num">Test 9</div>
+    <h2>Fishing and server load</h2>
+  </div>
+
+  <div class="step">
+    <h3>Fishing (unchanged from v1.0, worth one look)</h3>
+    <p>Fishing still uses the per-generation spawn files; the new rule doesn't touch it. With Gen 1 only, fish a river or ocean a few times with a Poké Rod.</p>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t9-fish"><span>Every catch is Gen 1 (Magikarp, Goldeen, Tentacool and so on).</span></label></li>
+    </ul>
+  </div>
+
+  <div class="step">
+    <h3>Lag check near habitats</h3>
+    <p>With all nine packs on, stand in a real habitat with natural spawning on for a minute, then compare with every pack off.</p>
+    <div class="cmds">
+      <div class="cmd"><code>/tick query</code><button type="button" class="copy">Copy</button></div>
+    </div>
+    <ul class="checks">
+      <li><label class="check"><input type="checkbox" id="c-t9-lag"><span>The average tick time (milliseconds per tick) is about the same with and without the packs.</span></label></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===================== REPORT ===================== -->
+<section id="report">
+  <div class="sec-head">
+    <div class="sec-num">If something fails</div>
+    <h2>What to capture</h2>
+  </div>
+  <ul class="plain">
+    <li>The test and check that failed, and the output of <code>/datapack list enabled</code>.</li>
+    <li>A screenshot of the <code>/checkspawn</code> output, plus where you were: the habitat's name (or pad pool), your coordinates (F3) and dimension.</li>
+    <li>Any lines in <code>logs/latest.log</code> mentioning <code>spawnfilter</code>, <code>generation_filter</code>, <code>molang</code> or <code>Error</code>.</li>
+    <li>Whether the same check passes with all packs off. If the baseline is also wrong, the issue is in Cobblemon itself rather than the packs.</li>
+  </ul>
+</section>
+
+<!-- ===================== REFERENCE ===================== -->
+<section id="reference">
+  <div class="sec-head">
+    <div class="sec-num">Reference</div>
+    <h2>All 51 habitat spawn lists</h2>
+    <p class="muted">Which generations get spawns from each habitat with only that pack installed, its regional forms, the species it only spawns when two generations are installed, how to find it, and a command to load it onto the test pad. Pick a generation to see which habitats will be empty with only that pack.</p>
+  </div>
+  <div class="row-inline">
+    <label for="gen-filter" class="muted">Only this generation installed:</label>
+    <select id="gen-filter" style="max-width: 12rem">
+      <option value="">— show all —</option>
+      <option value="1">Gen 1</option><option value="2">Gen 2</option><option value="3">Gen 3</option>
+      <option value="4">Gen 4</option><option value="5">Gen 5</option><option value="6">Gen 6</option>
+      <option value="7">Gen 7</option><option value="8">Gen 8</option><option value="9">Gen 9</option>
+    </select>
+    <output id="gen-filter-count" class="muted"></output>
+  </div>
+  <div class="table-wrap ref">
+    <table>
+      <thead><tr><th>Habitat</th><th>Generations</th><th>Regional forms / two-gen species</th><th>Find it</th><th>Test pad</th></tr></thead>
+      <tbody id="ref-body"></tbody>
+    </table>
+  </div>
+  <p class="cmd-note">Habitats marked "has water spawns" also have swimming Pokémon, which the dry test pad can't show; test those parts in the field world.</p>
+</section>
+
+<footer>
+  Built from Cobblemon 1.8.2's data: habitat pools, herd files and spawn code. Progress ticks are stored only in this browser.
+</footer>
+
+</div>
+
+<script>
+const HABITATS = [{"pool":"cobblemon:abandoned_fortress","name":"Abandoned Fortress","gens":[1,4,5,6,8,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/abandoned_fortress"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:abandoned_village_house","name":"Abandoned Village House","gens":[1,2,3,4,5,6,7,8,9],"regional":["Alolan Meowth","Alolan Persian","Alolan Raticate","Alolan Rattata"],"structure":[],"biomes":[],"feature":[],"water":false,"landOnly":true,"both":["Meowth, Persian, Raticate, Rattata (Gen 1 + 7)"]},{"pool":"cobblemon:ancient_wellspring","name":"Ancient Wellspring","gens":[1,2,3,4,5,6,7,8],"regional":["Hisuian Goodra","Hisuian Goomy","Hisuian Sliggoo"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/ancient_wellsprings"],"water":true,"landOnly":false,"both":["Goodra, Goomy, Sliggoo (Gen 6 + 8)","Wooper (Gen 2 + 9)"]},{"pool":"cobblemon:badlands_shaded_rock","name":"Badlands Shaded Rock","gens":[1,2,4,5,9],"regional":[],"structure":["cobblemon:habitats/badlands_shaded_rock"],"biomes":["#cobblemon:is_badlands"],"feature":[],"water":false,"landOnly":true,"both":["Braviary, Rufflet (Gen 5 + 8)"]},{"pool":"cobblemon:berry_patch","name":"Berry Patch","gens":[1,2,3,4,5,6,7,8],"regional":[],"structure":["cobblemon:habitats/berry_patch"],"biomes":["#cobblemon:is_temperate"],"feature":[],"water":false,"landOnly":true,"both":["Linoone, Zigzagoon (Gen 3 + 8)"]},{"pool":"cobblemon:birch_wildfire_scar","name":"Birch Wildfire Scar","gens":[1,2,4,5,6,8],"regional":[],"structure":["cobblemon:habitats/birch_wildfire_scar"],"biomes":["#cobblemon:is_highlands"],"feature":[],"water":false,"landOnly":true,"both":["Cyndaquil, Quilava, Typhlosion (Gen 2 + 8)","Ninetales, Vulpix (Gen 1 + 7)"]},{"pool":"cobblemon:bug_mound","name":"Bug Mound","gens":[5,7,8],"regional":[],"structure":["cobblemon:habitats/bug_mound"],"biomes":["#cobblemon:is_savanna"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:carved_ice_spikes","name":"Carved Ice Spikes","gens":[1,2,3,4,5],"regional":["Alolan Sandshrew","Alolan Sandslash","Hisuian Avalugg","Hisuian Bergmite"],"structure":["cobblemon:habitats/carved_ice_spikes"],"biomes":["#cobblemon:is_freezing"],"feature":[],"water":false,"landOnly":true,"both":["Avalugg, Bergmite (Gen 6 + 8)","Sandshrew, Sandslash (Gen 1 + 7)"]},{"pool":"cobblemon:chorus_briar","name":"Chorus Briar","gens":[3,5,6],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/chorus_briars"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:crimson_fungal_dwelling","name":"Crimson Fungal Dwelling","gens":[1,5,6,9],"regional":["Hisuian Cyndaquil","Hisuian Quilava","Hisuian Typhlosion"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/strange_crimson_fungal_dwellings"],"water":false,"landOnly":true,"both":["Cyndaquil, Quilava, Typhlosion (Gen 2 + 8)"]},{"pool":"cobblemon:deep_roots","name":"Deep Roots","gens":[1,4,5,7,8],"regional":["Hisuian Goodra","Hisuian Goomy","Hisuian Sliggoo"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/deep_roots"],"water":false,"landOnly":true,"both":["Goodra, Goomy, Sliggoo (Gen 6 + 8)"]},{"pool":"cobblemon:deep_sea_spire","name":"Deep Sea Spire","gens":[1,2,3,5,7],"regional":[],"structure":["cobblemon:habitats/deep_sea_spire"],"biomes":["#cobblemon:is_lukewarm_and_temperate_ocean"],"feature":[],"water":true,"landOnly":false,"both":["Corsola (Gen 2 + 8)"]},{"pool":"cobblemon:desert_oasis","name":"Desert Oasis","gens":[1,2,3,4,5,6,8,9],"regional":[],"structure":["cobblemon:habitats/desert_oasis"],"biomes":["#cobblemon:has_block/sand"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:desert_shaded_rock","name":"Desert Shaded Rock","gens":[1,2,4,5,9],"regional":[],"structure":["cobblemon:habitats/desert_shaded_rock"],"biomes":["#cobblemon:has_block/sand"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:drifting_icebergs","name":"Drifting Icebergs","gens":[1,3,4,5,8],"regional":[],"structure":["cobblemon:habitats/drifting_icebergs"],"biomes":["#cobblemon:is_cold_and_temperate_ocean"],"feature":[],"water":true,"landOnly":false,"both":["Avalugg, Bergmite (Gen 6 + 8)"]},{"pool":"cobblemon:earthen_hives","name":"Earthen Hives","gens":[1,2,3,5,6,9],"regional":["Alolan Diglett","Alolan Dugtrio"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/earthen_hives"],"water":false,"landOnly":true,"both":["Diglett, Dugtrio, Sandshrew, Sandslash (Gen 1 + 7)"]},{"pool":"cobblemon:exposed_geode","name":"Exposed Geode","gens":[2,3,4,5,6,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/exposed_geodes"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:fae_mounds","name":"Fae Mounds","gens":[2,3,4,5,6,7,8,9],"regional":["Galarian Ponyta","Galarian Rapidash"],"structure":["cobblemon:habitats/fae_mounds"],"biomes":["#cobblemon:is_magical"],"feature":[],"water":false,"landOnly":true,"both":["Lilligant, Petilil (Gen 5 + 8)","Ponyta, Rapidash (Gen 1 + 8)"]},{"pool":"cobblemon:flowerbed_clearing","name":"Flowerbed Clearing","gens":[1,2,3,4,6,7,8],"regional":[],"structure":["cobblemon:habitats/flowerbed_clearing","cobblemon:habitats/pinkflowerbed_clearing"],"biomes":["#cobblemon:is_cherry_blossom","#cobblemon:is_floral"],"feature":[],"water":false,"landOnly":true,"both":["Lilligant, Petilil (Gen 5 + 8)"]},{"pool":"cobblemon:freshwater_pond","name":"Freshwater Pond","gens":[1,2,3,5,7,9],"regional":[],"structure":["cobblemon:habitats/freshwater_pond"],"biomes":["#cobblemon:is_temperate"],"feature":[],"water":true,"landOnly":false,"both":[]},{"pool":"cobblemon:fungal_dwelling","name":"Fungal Dwelling","gens":[1,2,3,5,7,9],"regional":[],"structure":["cobblemon:habitats/fungal_dwelling"],"biomes":["#cobblemon:is_mushroom"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:lost_cave_ruins","name":"Lost Cave Ruins","gens":[2,3,4,5,6,8,9],"regional":["Galarian Yamask"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/lost_ruins"],"water":false,"landOnly":true,"both":["Yamask (Gen 5 + 8)"]},{"pool":"cobblemon:lush_canopy","name":"Lush Canopy","gens":[1,2,3,4,5,7,8,9],"regional":[],"structure":["cobblemon:habitats/lush_canopy"],"biomes":["#cobblemon:is_jungle"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:lush_cenote","name":"Lush Cenote","gens":[1,2,3,4,7,9],"regional":[],"structure":["cobblemon:habitats/lush_cenote"],"biomes":["#cobblemon:is_jungle"],"feature":[],"water":true,"landOnly":false,"both":["Wooper (Gen 2 + 9)"]},{"pool":"cobblemon:lush_peat_bog","name":"Lush Peat Bog","gens":[2,3,4,5,8,9],"regional":["Galarian Stunfisk"],"structure":["cobblemon:habitats/lush_peat_bog"],"biomes":["#cobblemon:is_jungle"],"feature":[],"water":true,"landOnly":false,"both":["Goodra, Goomy, Sliggoo (Gen 6 + 8)","Stunfisk (Gen 5 + 8)","Wooper (Gen 2 + 9)"]},{"pool":"cobblemon:meteorite_impact","name":"Meteorite Impact","gens":[1,2,3,4,5,7],"regional":[],"structure":["cobblemon:habitats/meteorite_impact"],"biomes":["#cobblemon:is_badlands"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:natural_lightning_rod","name":"Natural Lightning Rod","gens":[1,2,3,4,5,7],"regional":["Alolan Geodude","Alolan Golem","Alolan Graveler"],"structure":["cobblemon:habitats/natural_lightningrod"],"biomes":["#cobblemon:is_mountain"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:oak_wildfire_scar","name":"Oak Wildfire Scar","gens":[1,2,3,4,5,6,8],"regional":[],"structure":["cobblemon:habitats/oak_wildfire_scar"],"biomes":["#cobblemon:is_grassland"],"feature":[],"water":false,"landOnly":true,"both":["Cyndaquil, Quilava, Typhlosion (Gen 2 + 8)","Ninetales, Vulpix (Gen 1 + 7)"]},{"pool":"cobblemon:parched_peat_bog","name":"Parched Peat Bog","gens":[2,3,4,5,8,9],"regional":["Paldean Wooper"],"structure":["cobblemon:habitats/parched_peat_bog"],"biomes":["#cobblemon:is_grassland"],"feature":[],"water":true,"landOnly":false,"both":["Stunfisk (Gen 5 + 8)","Wooper (Gen 2 + 9)"]},{"pool":"cobblemon:pinkflowerbed_clearing","name":"Pinkflowerbed Clearing","gens":[1,2,3,4,5,6,7],"regional":["Galarian Ponyta","Galarian Rapidash","Hisuian Lilligant","Hisuian Petilil"],"structure":["cobblemon:habitats/pinkflowerbed_clearing"],"biomes":["#cobblemon:is_floral"],"feature":[],"water":false,"landOnly":true,"both":["Lilligant, Petilil (Gen 5 + 8)","Ponyta, Rapidash (Gen 1 + 8)"]},{"pool":"cobblemon:quartz_spikes","name":"Quartz Spikes","gens":[1,2,3,4,6,8,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/quartz_spikes"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:reclaimed_desert_monument","name":"Reclaimed Desert Monument","gens":[1,2,3,4,5,6,8,9],"regional":[],"structure":["cobblemon:habitats/reclaimed_deserted_monument"],"biomes":["#cobblemon:has_block/sand"],"feature":[],"water":false,"landOnly":true,"both":["Yamask (Gen 5 + 8)"]},{"pool":"cobblemon:reclaimed_lush_monument","name":"Reclaimed Lush Monument","gens":[1,2,4,5,6,7,8,9],"regional":["Galarian Yamask"],"structure":["cobblemon:habitats/reclaimed_lush_monument"],"biomes":["#cobblemon:is_jungle"],"feature":[],"water":false,"landOnly":true,"both":["Yamask (Gen 5 + 8)"]},{"pool":"cobblemon:rocky_outcrop","name":"Rocky Outcrop","gens":[1,2,3,4,5,7,8,9],"regional":["Hisuian Braviary","Hisuian Rufflet"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/rocky_outcrops"],"water":false,"landOnly":true,"both":["Braviary, Rufflet (Gen 5 + 8)"]},{"pool":"cobblemon:rocky_tide_pool","name":"Rocky Tide Pool","gens":[1,2,3,4,6,7,8,9],"regional":["Hisuian Dewott","Hisuian Oshawott","Hisuian Samurott"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/rocky_tidepools"],"water":true,"landOnly":false,"both":["Corsola (Gen 2 + 8)","Dewott, Oshawott, Samurott (Gen 5 + 8)"]},{"pool":"cobblemon:root_nursery","name":"Root Nursery","gens":[1,2,3,4,5,9],"regional":["Paldean Wooper"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/root_nurseries"],"water":true,"landOnly":false,"both":["Goodra, Goomy, Sliggoo (Gen 6 + 8)","Stunfisk (Gen 5 + 8)","Wooper (Gen 2 + 9)"]},{"pool":"cobblemon:sandpit_clearing","name":"Sandpit Clearing","gens":[1,2,3,5,6,7,9],"regional":[],"structure":["cobblemon:habitats/sandpit_clearing"],"biomes":["#cobblemon:is_grassland"],"feature":[],"water":false,"landOnly":true,"both":["Cubone, Diglett, Dugtrio, Marowak, Sandshrew, Sandslash (Gen 1 + 7)"]},{"pool":"cobblemon:sandy_tide_pool","name":"Sandy Tide Pool","gens":[1,2,3,4,6,7,8,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/sandy_tidepools"],"water":true,"landOnly":false,"both":["Corsola (Gen 2 + 8)","Dewott, Oshawott, Samurott (Gen 5 + 8)"]},{"pool":"cobblemon:skeletal_fall","name":"Skeletal Fall","gens":[2,3,4,8,9],"regional":["Alolan Cubone","Alolan Marowak","Galarian Corsola","Hisuian Zoroark","Hisuian Zorua"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/skeletal_fall"],"water":false,"landOnly":true,"both":["Corsola (Gen 2 + 8)","Cubone, Marowak (Gen 1 + 7)"]},{"pool":"cobblemon:snowy_burrow","name":"Snowy Burrow","gens":[2,3,4,5,8],"regional":["Alolan Sandshrew","Alolan Sandslash"],"structure":["cobblemon:habitats/snowy_burrow"],"biomes":["#c:is_snowy_plains"],"feature":[],"water":false,"landOnly":true,"both":["Sandshrew, Sandslash (Gen 1 + 7)"]},{"pool":"cobblemon:snowy_grotto","name":"Snowy Grotto","gens":[2,3,4,7,8],"regional":["Alolan Ninetales","Alolan Vulpix","Galarian Linoone","Galarian Zigzagoon","Hisuian Cyndaquil","Hisuian Quilava","Hisuian Typhlosion","Hisuian Zoroark","Hisuian Zorua"],"structure":["cobblemon:habitats/snowy_grotto"],"biomes":["#c:is_snowy_plains"],"feature":[],"water":false,"landOnly":true,"both":["Cyndaquil, Quilava, Typhlosion (Gen 2 + 8)","Linoone, Zigzagoon (Gen 3 + 8)","Ninetales, Vulpix (Gen 1 + 7)"]},{"pool":"cobblemon:snowy_thermal_vents","name":"Snowy Thermal Vents","gens":[1,2,3,4,5,7,9],"regional":[],"structure":["cobblemon:habitats/snowy_thermal_vents"],"biomes":["#c:is_snowy_plains"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:spruce_wildfire_scar","name":"Spruce Wildfire Scar","gens":[1,2,4,5,6,8],"regional":["Hisuian Cyndaquil","Hisuian Quilava","Hisuian Typhlosion"],"structure":["cobblemon:habitats/spruce_wildfire_scar"],"biomes":["#cobblemon:is_snowy_plains"],"feature":[],"water":false,"landOnly":true,"both":["Cyndaquil, Quilava, Typhlosion (Gen 2 + 8)","Ninetales, Vulpix (Gen 1 + 7)"]},{"pool":"cobblemon:strange_fungal_dwelling","name":"Strange Fungal Dwelling","gens":[1,2,3,4,5,6,7,8,9],"regional":["Hisuian Cyndaquil","Hisuian Quilava","Hisuian Typhlosion"],"structure":[],"biomes":[],"feature":["cobblemon:habitats/strange_warped_fungal_dwellings"],"water":false,"landOnly":true,"both":["Cyndaquil, Quilava, Typhlosion (Gen 2 + 8)"]},{"pool":"cobblemon:sunflowerbed_clearing","name":"Sunflowerbed Clearing","gens":[1,2,3,6,9],"regional":[],"structure":["cobblemon:habitats/sunflowerbed_clearing"],"biomes":["#cobblemon:is_grassland"],"feature":[],"water":false,"landOnly":true,"both":["Ponyta, Rapidash (Gen 1 + 8)"]},{"pool":"cobblemon:sunscorched_clearing","name":"Sunscorched Clearing","gens":[2,3,4,5,6,7,8,9],"regional":[],"structure":["cobblemon:habitats/sandpit_clearing","cobblemon:habitats/sunscorched_clearing"],"biomes":["#cobblemon:is_grassland","#cobblemon:is_savanna"],"feature":[],"water":false,"landOnly":true,"both":["Cubone, Diglett, Dugtrio, Marowak, Sandshrew, Sandslash (Gen 1 + 7)"]},{"pool":"cobblemon:thermal_crevices","name":"Thermal Crevices","gens":[1,2,3,4,5,7,8],"regional":[],"structure":["cobblemon:habitats/thermal_crevices"],"biomes":["#cobblemon:is_jungle"],"feature":[],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:treasure_hoard","name":"Treasure Hoard","gens":[3,4,5,6,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/treasure_hoard"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:volcanic_plume","name":"Volcanic Plume","gens":[1,2,3,4,7,8,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/volcanic_plumes"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:warped_fungal_dwelling","name":"Warped Fungal Dwelling","gens":[2,3,4,5,6,7,8,9],"regional":[],"structure":[],"biomes":[],"feature":["cobblemon:habitats/strange_warped_fungal_dwellings"],"water":false,"landOnly":true,"both":[]},{"pool":"cobblemon:zen_garden","name":"Zen Garden","gens":[1,2,3,4,5,6,7,9],"regional":[],"structure":["cobblemon:habitats/zen_garden"],"biomes":["#cobblemon:is_jungle"],"feature":[],"water":true,"landOnly":false,"both":[]}];
+const PACK = g => `file/SpawnFilter_Gen${g}_Cobblemon1.8.2_v2.0.zip`;
+const PAD = "0 -61 0";
+const habitatNbt = pool => `{PoolId:"${pool}",SpawningStyle:"cobblemon:natural",ReplaceSpawns:1b,RangeOfInfluence:16,PhaseOrder:"SIMPLE",MimicId:"minecraft:moss_block",Modifiers:""}`;
+
+function el(tag, attrs = {}, children = []) {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") node.className = v; else if (k === "text") node.textContent = v; else node.setAttribute(k, v);
+  }
+  for (const child of [].concat(children)) if (child) node.append(child);
+  return node;
+}
+function cmdRow(text) {
+  return el("div", { class: "cmd" }, [el("code", { text }), el("button", { type: "button", class: "copy", text: "Copy" })]);
+}
+function genChips(gens) {
+  const on = new Set(gens);
+  return el("span", { class: "genset", "aria-label": gens.length ? "Generations " + gens.join(", ") : "No generations" },
+    [1, 2, 3, 4, 5, 6, 7, 8, 9].map(g => el("i", { class: on.has(g) ? "on" : "", text: String(g) })));
+}
+
+// Pack switch blocks: disable everything not wanted, then enable the wanted packs
+document.querySelectorAll("[data-packs]").forEach(host => {
+  const gens = host.dataset.packs ? host.dataset.packs.split(",").map(Number) : [];
+  const label = gens.length ? "Gen " + gens.join(" + ") : "No filter packs (plain Cobblemon)";
+  const cmds = [];
+  for (let g = 1; g <= 9; g++) if (!gens.includes(g)) cmds.push(`/datapack disable "${PACK(g)}"`);
+  for (const g of gens) cmds.push(`/datapack enable "${PACK(g)}"`);
+  const box = el("details", { class: "packs" }, [
+    el("summary", {}, [el("b", { text: "Switch packs: " + label }), genChips(gens), el("span", { class: "muted", text: `(${cmds.length} commands)` })]),
+    el("div", { class: "cmds" }, [
+      ...cmds.map(cmdRow),
+      el("p", { class: "cmd-note", text: "\"Already enabled\" or \"already disabled\" errors are harmless. Each command reloads data, which takes a moment." })
+    ])
+  ]);
+  host.replaceWith(box);
+});
+
+// Habitat pad: clear the spot, then place a habitat block using the given pool
+document.querySelectorAll("[data-pad]").forEach(host => {
+  const pool = host.dataset.pad;
+  host.replaceWith(el("div", { class: "cmds" }, [
+    cmdRow(`/setblock ${PAD} minecraft:grass_block`),
+    cmdRow(`/setblock ${PAD} cobblemon:habitat_block${habitatNbt(pool)}`)
+  ]));
+});
+document.querySelectorAll("[data-here]").forEach(host => {
+  host.replaceWith(cmdRow(`/setblock ~ ~-1 ~ cobblemon:habitat_block${habitatNbt(host.dataset.here)}`));
+});
+
+// Copy buttons
+async function copyText(text, button, doneLabel = "Copied") {
+  const original = button.textContent;
+  try {
+    await navigator.clipboard.writeText(text);
+    button.textContent = doneLabel; button.classList.add("done");
+  } catch (e) {
+    const code = button.classList.contains("copy") ? button.previousElementSibling : null;
+    if (code) {
+      const range = document.createRange(); range.selectNodeContents(code);
+      const sel = getSelection(); sel.removeAllRanges(); sel.addRange(range);
+      button.textContent = "Press Ctrl+C";
+    } else {
+      button.title = text; button.textContent = "Copy blocked";
+    }
+  }
+  setTimeout(() => { button.textContent = original; button.classList.remove("done"); }, 1400);
+}
+document.addEventListener("click", e => {
+  const btn = e.target.closest(".copy");
+  if (btn) { copyText(btn.previousElementSibling.textContent, btn); return; }
+  const small = e.target.closest(".copy-sm");
+  if (small) copyText(small.dataset.copy, small);
+});
+
+// Checklist progress, remembered per browser
+const STORE_KEY = "spawnfilter-v2-test-plan";
+function loadTicks() { try { return JSON.parse(localStorage.getItem(STORE_KEY) || "{}"); } catch (e) { return {}; } }
+function saveTicks(state) { try { localStorage.setItem(STORE_KEY, JSON.stringify(state)); } catch (e) { /* storage blocked: ticks just won't persist */ } }
+const boxes = [...document.querySelectorAll(".check input[type=checkbox]")];
+const ticks = loadTicks();
+boxes.forEach(b => { b.checked = !!ticks[b.id]; });
+function updateProgress() {
+  const done = boxes.filter(b => b.checked).length;
+  document.getElementById("progress-count").textContent = `${done} / ${boxes.length} checks`;
+  document.getElementById("bar-fill").style.width = (boxes.length ? (100 * done / boxes.length) : 0) + "%";
+}
+boxes.forEach(b => b.addEventListener("change", () => {
+  const state = loadTicks(); state[b.id] = b.checked; saveTicks(state); updateProgress();
+}));
+updateProgress();
+const resetBtn = document.getElementById("reset-btn");
+let resetArmed = null;
+resetBtn.addEventListener("click", () => {
+  if (resetArmed) {
+    clearTimeout(resetArmed); resetArmed = null;
+    boxes.forEach(b => { b.checked = false; }); saveTicks({}); updateProgress();
+    resetBtn.textContent = "Ticks cleared";
+    setTimeout(() => { resetBtn.textContent = "Reset ticks"; }, 1400);
+  } else {
+    resetBtn.textContent = "Click again to clear all";
+    resetArmed = setTimeout(() => { resetArmed = null; resetBtn.textContent = "Reset ticks"; }, 3000);
+  }
+});
+
+// Herd ID decoder
+const herdInput = document.getElementById("herd-id");
+const herdOut = document.getElementById("herd-decoded");
+function decodeHerd() {
+  const id = herdInput.value.trim();
+  herdOut.textContent = "";
+  if (!id) return;
+  const at = id.indexOf("__sf.");
+  if (at < 0) {
+    herdOut.append("This herd only contains one generation's Pokémon. It spawns whenever its own pack is installed, the same as in v1.0.");
+    return;
+  }
+  const parts = id.slice(at + 5).split(".").filter(Boolean);
+  const ins = parts.filter(p => p.startsWith("in")).map(p => p.slice(2));
+  const outs = parts.filter(p => p.startsWith("out")).map(p => p.slice(3));
+  const list = gs => gs.map(g => "Gen " + g).join(gs.length > 2 ? ", " : " and ").replace(/, (Gen \d)$/, ", and $1");
+  const tail = outs.length
+    ? [", and ", el("b", { text: list(outs) }), outs.length > 1 ? " are not." : " is not."]
+    : [". Every generation in this herd is installed, so this is Cobblemon's original herd."];
+  herdOut.append(el("b", { text: id.slice(0, at) }), ": the version that spawns when ",
+    el("b", { text: list(ins) }), ins.length > 1 ? " are installed" : " is installed", ...tail);
+}
+herdInput.addEventListener("input", decodeHerd);
+decodeHerd();
+
+// Habitat reference table
+const refBody = document.getElementById("ref-body");
+const rows = HABITATS.map(h => {
+  const find = h.structure.length
+    ? el("div", { class: "stack", style: "gap:4px" }, [
+        ...h.structure.map(s => el("button", { type: "button", class: "copy-sm", "data-copy": `/locate structure ${s}`, text: "Copy /locate", title: `/locate structure ${s}` })),
+        el("span", { class: "mini", text: h.biomes.join(", ") })
+      ])
+    : el("span", { class: "mini", text: h.feature.length ? "Generates underground or as a terrain feature; can't be located. Use the test pad." : "Not placed by world generation in 1.8.2. Test pad only." });
+  const tr = el("tr", {}, [
+    el("td", {}, [el("b", { text: h.name }), el("div", { class: "mini", text: h.pool }), h.water ? el("div", { class: "mini", text: "has water spawns" }) : null]),
+    el("td", {}, genChips(h.gens)),
+    el("td", { class: "mini" }, [
+      el("div", { text: h.regional.join(", ") || "—" }),
+      h.both.length ? el("div", { class: "both-gens", text: "Only with both gens: " + h.both.join("; ") }) : null
+    ]),
+    el("td", {}, find),
+    el("td", {}, el("button", { type: "button", class: "copy-sm", "data-copy": `/setblock ${PAD} cobblemon:habitat_block${habitatNbt(h.pool)}`, text: "Copy setblock" }))
+  ]);
+  tr.dataset.gens = h.gens.join(",");
+  refBody.append(tr);
+  return tr;
+});
+const genFilter = document.getElementById("gen-filter");
+const genCount = document.getElementById("gen-filter-count");
+function applyGenFilter() {
+  const g = genFilter.value;
+  let empty = 0;
+  rows.forEach(tr => {
+    const has = !g || tr.dataset.gens.split(",").includes(g);
+    tr.classList.toggle("dim", !!g && !has);
+    tr.classList.toggle("empty-for", !!g && !has);
+    if (g && !has) empty++;
+  });
+  genCount.textContent = g ? `${empty} of ${rows.length} habitats spawn nothing with only Gen ${g}` : "";
+}
+genFilter.addEventListener("change", applyGenFilter);
+applyGenFilter();
+</script>
+
+</body></html>
