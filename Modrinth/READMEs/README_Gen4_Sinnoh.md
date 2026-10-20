@@ -11,11 +11,21 @@ Fun fact: My brother and I used the Action Replay so much on our copy of Diamond
 - Hisuian = Gen 8
 - Paldean = Gen 9
 
+## Requirements
+| Minecraft | Cobblemon | Datapack |
+|-----------|-----------|----------|
+| 1.21.1    | 1.8.2     | v2.x     |
+| 1.21.1    | 1.7.1     | v1.x     |
+
+Older datapack versions are on the Versions tab.
+
 ## Mix and match!
 
 Want to include multiple generations? Just add any of my other spawn-filtering datapacks to include them in the spawn pool. It's that easy!
 
 For example, if you want a special playthrough of generations 1-4 (my favorite ones, by the way), just add all four datapacks to your world and you're all set.
+
+Herds that mix generations combine automatically, too. With only Gen 2 installed, an Alpha Crobat shows up on its own, but install Gen 1 as well and it leads its usual herd of Zubat and Golbat.
 
 - [Gen 1: Kanto](https://modrinth.com/datapack/cobblemon-spawn-filter-gen-1-kanto)
 - [Gen 2: Johto](https://modrinth.com/datapack/cobblemon-spawn-filter-gen-2-johto)
@@ -31,6 +41,10 @@ For example, if you want a special playthrough of generations 1-4 (my favorite o
 ## What this datapack **DOES** affect:
 - All natural spawns (...when they just _pop_ into existence)
 - Fishing spawns (via Cobblemon fishing mechanics)
+- Alpha Pokémon and herd spawns (new in Cobblemon 1.8)
+- Habitat structures (new in Cobblemon 1.8)
+    - NOTE: Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby.
+    - NOTE: Some Pokémon spawn in habitats in both their regular and a regional form (example: Vulpix in Wildfire Scars, Alolan Vulpix in Snowy Grottos). Cobblemon doesn't let datapacks tell those apart in habitats, so habitats only spawn them when both generations are installed (Gen 1 + Gen 7 for Vulpix). They still spawn normally outside habitats.
 
 ## What this datapack **DOES NOT** affect:
 - Cobblemon structures (example: Gimmighouls spawning from the chests in Gimmighoul towers)
@@ -52,4 +66,4 @@ Issues or questions?
 Reach out to me on the official Cobblemon discord (@TacoSocks) or email me at <tacosocks.gaming@gmail.com>.
 
 # TL;DR
-Filters Cobblemon’s natural Pokémon spawns by generation. Stack multiple datapacks to combine generations. :)
+Filters Cobblemon’s natural Pokémon spawns by generation, including Alphas, herds and habitats. Stack multiple datapacks to combine generations. :)

@@ -9,6 +9,14 @@ This datapack manipulates the spawning mechanics for Cobblemon by replacing the 
 - Hisuian = Gen 8
 - Paldean = Gen 9
 
+## Requirements
+| Minecraft | Cobblemon | Datapack |
+|-----------|-----------|----------|
+| 1.21.1    | 1.8.2     | v2.x     |
+| 1.21.1    | 1.7.1     | v1.x     |
+
+Older datapack versions are on the Versions tab of each Modrinth page.
+
 ## Mix and match!
 
 Want to include multiple generations? Just add any number of my spawn-filtering datapacks to include them in the spawn pool. It's that easy!
@@ -31,8 +39,8 @@ Herds that mix generations combine automatically, too. With only Gen 2 installed
 ## What this datapack **DOES** affect:
 - All natural spawns (...when they just _pop_ into existence)
 - Fishing spawns (via Cobblemon fishing mechanics)
-- Alpha Pokémon and herd spawns (Cobblemon 1.8+)
-- Habitat structures (Cobblemon 1.8+)
+- Alpha Pokémon and herd spawns (new in Cobblemon 1.8)
+- Habitat structures (new in Cobblemon 1.8)
     - NOTE: Habitats replace normal spawning right around them, so a habitat with none of your generations' Pokémon won't spawn anything nearby.
     - NOTE: Some Pokémon spawn in habitats in both their regular and a regional form (example: Vulpix in Wildfire Scars, Alolan Vulpix in Snowy Grottos). Cobblemon doesn't let datapacks tell those apart in habitats, so habitats only spawn them when both generations are installed (Gen 1 + Gen 7 for Vulpix). They still spawn normally outside habitats.
 
@@ -64,7 +72,7 @@ I found a way for my datapacks to be compatible with the Cobbleverse modpack, bu
 1. For multiple generations, repeat the previous step until each datapack is enabled.
 
 ## Disclaimer
-Currently, the spawning rules are based off of the base Cobblemon mod. If a modapack, such as Cobblevers, has their own tweaked spawning rules, then enabling my datapacks will revert to the base Cobblemon spawning rules.
+Currently, the spawning rules are based off of the base Cobblemon mod. If a modpack, such as Cobbleverse, has their own tweaked spawning rules, then enabling my datapacks will revert to the base Cobblemon spawning rules.
 
 Also, because the spawn rules are based off of the base Cobblemon mod, any spawning conditions for unimplemented Pokémon that modpacks add, will be missing until they are in the base mod. For example, this notably affects mythical and legendary Pokémon that spawn naturally from the Cobbleverse modpack.
 
@@ -74,4 +82,4 @@ Issues or questions?
 Reach out to me on the official Cobblemon discord (@TacoSocks) or email me at <tacosocks.gaming@gmail.com>.
 
 # TL;DR
-Filters Cobblemon’s natural Pokémon spawns by generation. Stack multiple datapacks to combine generations. :)
+Filters Cobblemon’s natural Pokémon spawns by generation, including Alphas, herds and habitats. Stack multiple datapacks to combine generations. :)
