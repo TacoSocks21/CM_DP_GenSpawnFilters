@@ -1,7 +1,14 @@
+# Generation 8 - Spawn Filter
+| Grookey | Scorbunny | Sobble |
+| --- | --- | --- |
+| ![Grookey in the starter selection screen](https://cdn.modrinth.com/data/RMQo9Ieu/images/0f14977e9591c6b8f268649befc299cfb115c952.png) | ![Scorbunny in the starter selection screen](https://cdn.modrinth.com/data/RMQo9Ieu/images/94ff02f2d3c1a0933cbe1593191bf10be86c7bb2.png) | ![Sobble in the starter selection screen](https://cdn.modrinth.com/data/RMQo9Ieu/images/7a5aebf37c3c383e0c0fefb2a417d6da7423c3c5.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 8](https://cdn.modrinth.com/data/RMQo9Ieu/images/0a28b2a17a42883d6357308411ea742c2858605b.png) |
 
 Fun fact: Zacian used to be good in [PokéRogue](https://pokerogue.net/) (fan-made Pokémon roguelite browser game), but not anymore...
 

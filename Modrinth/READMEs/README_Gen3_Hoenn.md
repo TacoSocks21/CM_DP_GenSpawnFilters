@@ -1,7 +1,14 @@
+# Generation 3 - Spawn Filter
+| Treecko | Torchic | Mudkip |
+| --- | --- | --- |
+| ![Treecko in the starter selection screen](https://cdn.modrinth.com/data/uA5jnNAT/images/f0ac8134444bc351a402313810967bdc1826c8f7.png) | ![Torchic in the starter selection screen](https://cdn.modrinth.com/data/uA5jnNAT/images/13dfc2ab812eec75062611bfc4a745134202071a.png) | ![Mudkip in the starter selection screen](https://cdn.modrinth.com/data/uA5jnNAT/images/b724ae176338e625cd641bf4b9b03fc33c000ccb.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 3](https://cdn.modrinth.com/data/uA5jnNAT/images/7bfc2c7496618eca30d7ae3e3d2790037c2452aa.png) |
 
 Fun fact: My save file randomly reset after hundreds of hours on my copy of Emerald... still haunts me to this day. Also, my cousin beat the Sapphire Elite Four using only Kyogre.
 

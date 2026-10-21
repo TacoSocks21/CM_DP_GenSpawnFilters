@@ -1,7 +1,14 @@
+# Generation 9 - Spawn Filter
+| Sprigatito | Fuecoco | Quaxly |
+| --- | --- | --- |
+| ![Sprigatito in the starter selection screen](https://cdn.modrinth.com/data/57JGoN7j/images/24fc85c17a28473916890f6d666f003d67904cfa.png) | ![Fuecoco in the starter selection screen](https://cdn.modrinth.com/data/57JGoN7j/images/711b14c2d52165b760622fbe996fa91c19aeb8f7.png) | ![Quaxly in the starter selection screen](https://cdn.modrinth.com/data/57JGoN7j/images/a15321f47d800153cacb7365d187781d47228b68.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 9](https://cdn.modrinth.com/data/57JGoN7j/images/7bf426dd978a10648beca226d8b9d143d1fa2148.png) |
 
 Fun fact: Is it really a "legendary" Pokémon if you're just given it at the beginning of the game? Food for thought...
 

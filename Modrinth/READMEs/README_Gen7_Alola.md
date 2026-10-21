@@ -1,7 +1,14 @@
+# Generation 7 - Spawn Filter
+| Rowlet | Litten | Popplio |
+| --- | --- | --- |
+| ![Rowlet in the starter selection screen](https://cdn.modrinth.com/data/rTx7fTZF/images/51d8d9677b2679c6244ca624a84c3d6ef959831b.png) | ![Litten in the starter selection screen](https://cdn.modrinth.com/data/rTx7fTZF/images/30e5cdcd11b2c9ae1095cfad524984530f7bf0c4.png) | ![Popplio in the starter selection screen](https://cdn.modrinth.com/data/rTx7fTZF/images/25b2b8449ba900d63fd8c23c5942e9744dca80b9.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 7](https://cdn.modrinth.com/data/rTx7fTZF/images/babf8b4b15484f2b0e39698a8a1adaa6a3aab53c.png) |
 
 Fun fact: Alolan Ninetales is so fun to play in Pokémon Unite.
 

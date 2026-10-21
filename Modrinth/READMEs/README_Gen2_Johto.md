@@ -1,7 +1,14 @@
+# Generation 2 - Spawn Filter
+| Chikorita | Cyndaquil | Totodile |
+| --- | --- | --- |
+| ![Chikorita in the starter selection screen](https://cdn.modrinth.com/data/CK75CjPJ/images/3107bb41806f3f01cd0108e1e6c17a72d75a9781.png) | ![Cyndaquil in the starter selection screen](https://cdn.modrinth.com/data/CK75CjPJ/images/0f6dc81dec52b662d67012e7bd015073554b15b0.png) | ![Totodile in the starter selection screen](https://cdn.modrinth.com/data/CK75CjPJ/images/3b3b5ba2d9e6aef1748425e643030e658d8508ac.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 2](https://cdn.modrinth.com/data/CK75CjPJ/images/4e8c78516e74d8678bf96eeb02aabdf979e041b3.png) |
 
 Fun fact: My favorite Pokémon from this generation is Lugia, and Soul Silver is one of my top favorite games of all time.
 

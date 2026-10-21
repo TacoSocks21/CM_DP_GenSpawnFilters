@@ -1,7 +1,14 @@
+# Generation 1 - Spawn Filter
+| Bulbasaur | Charmander | Squirtle |
+| --- | --- | --- |
+| ![Bulbasaur](https://cdn.modrinth.com/data/uFifduFD/images/9f27b0acba9bf68807c1d769d62074604353a53d.png) | ![Charmander](https://cdn.modrinth.com/data/uFifduFD/images/ea2ba7c184b0f876b3ca2e2b18b09d6ee8565b05.png) | ![Squirtle](https://cdn.modrinth.com/data/uFifduFD/images/ccd9fbebd5e200bb408d8f90d19ec2f1a72715dd.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 1](https://cdn.modrinth.com/data/uFifduFD/images/b29bb2fc1881ee61886efa36d7422827065fc5a7.png) |
 
 Fun fact: One of my favorite Pokémon from this generation is Pikachu, who is also one of my mains in Super Smash Bros. Ultimate.
 

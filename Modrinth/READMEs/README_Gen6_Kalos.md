@@ -1,7 +1,14 @@
+# Generation 6 - Spawn Filter
+| Chespin | Fennekin | Froakie |
+| --- | --- | --- |
+| ![Chespin in the starter selection screen](https://cdn.modrinth.com/data/5h0JGIjC/images/4c0b86e20bddd6d5050e77bfc51c95fdafe2aa16.png) | ![Fennekin in the starter selection screen](https://cdn.modrinth.com/data/cached_images/06d950ea850fc050d149b5793681ab45c267c18d.png) | ![Froakie in the starter selection screen](https://cdn.modrinth.com/data/5h0JGIjC/images/220a5f4dc55996be6e5c0a0cbb59aa9301c598e6.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 6](https://cdn.modrinth.com/data/5h0JGIjC/images/9042c5b7288b5a457c216dc086eaf3a0d44af663.png) |
 
 Fun fact: Never played the main-line games... but the megas are cool!
 

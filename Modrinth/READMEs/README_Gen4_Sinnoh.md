@@ -1,7 +1,14 @@
+# Generation 4 - Spawn Filter
+| Turtwig | Chimchar | Piplup |
+| --- | --- | --- |
+| ![Turtwig in the starter selection screen](https://cdn.modrinth.com/data/vjrQGk3P/images/328cf32bdafb4d4fe7216c9b2b695835efabf774.png) | ![Chimchar in the starter selection screen](https://cdn.modrinth.com/data/vjrQGk3P/images/94e7cb983062670c7750217c004f85cad9d8c877.png) | ![Piplup in the starter selection screen](https://cdn.modrinth.com/data/vjrQGk3P/images/add8d6907a353d9f8c4b35802d734f29980d1d0a.png) |
+
 # What it is...
 Want to play with _only_ Pokémon from your favorite generation? You've come to the right place!
 
-This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation.
+| Description | In-Game Spawns |
+|---|---|
+| This datapack manipulates the spawning mechanics for Cobblemon by replacing the spawn files with only Pokémon from this generation. | ![Example filtered spawns for gen 4](https://cdn.modrinth.com/data/vjrQGk3P/images/ccb9737f2ead582515512ba4965afcedef635ade.png) |
 
 Fun fact: My brother and I used the Action Replay so much on our copy of Diamond that it became unplayable... RIP. Also, Piplup is the GOAT... and the cutest.
 
